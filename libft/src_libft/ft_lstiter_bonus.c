@@ -33,9 +33,19 @@ void	ft_lstiter(t_list *lst, void (*f)(int))
 {
 	if (!f)
 		return ;
-	if (!lst || !lst->content)
+	if (!lst)
 		return ;
 	if (lst->next)
 		ft_lstiter(lst->next, f);
 	f(lst->content);
 }
+// void	ft_lstiter(t_list *lst, void (*f)(int))
+// {
+// 	if (!f)
+// 		return ;
+// 	if (!lst || !lst->content) // lst->content can be 0
+// 		return ;
+// 	if (lst->next)
+// 		ft_lstiter(lst->next, f);
+// 	f(lst->content);
+// }
