@@ -13,6 +13,7 @@ LIBFT_NAME = libft.a
 # *** source code files *** #
 SRC := \
 		main.c \
+		src/ft_swap.c \
 
 OBJ = $(SRC:.c=.o)
 HEADER = -I ./include/

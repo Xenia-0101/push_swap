@@ -27,12 +27,38 @@
 		Adds the node ’new’ at the beginning of the list.
 */
 
+/*
+
+	One member list:
+					| n |
+					| l |
+			n
+		   / \ next
+	  next \ /
+			l
+
+	Longer list:
+					0 - 1 - 2
+				   /		 \
+				  6 - 5 - 4 - 3
+
+				| n |
+*/
+
 #include "../include/libft.h"
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!lst || !new)
 		return ;
+	// one member list
+	if (!(*lst)->next && !(*lst)->prev)
+	{
+		new->next = *lst;
+		new->prev = *lst;
+		(*lst)->prev = new;
+		(*lst)->next = new;
+	}
 	new->next = *lst;
 	*lst = new;
 }

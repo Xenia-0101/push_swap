@@ -29,23 +29,32 @@ Description
 	’f’ on the content of each node.
 */
 
-void	ft_lstiter(t_list *lst, void (*f)(int))
+void	ft_lstiter(t_list *lst, void (*f)(t_cont *))
 {
 	if (!f)
 		return ;
-	if (!lst)
+	if (!lst || !lst->content)
 		return ;
 	if (lst->next)
 		ft_lstiter(lst->next, f);
 	f(lst->content);
 }
-/* void	ft_lstiter(t_list *lst, void (*f)(int))
+/**
+ * @brief	Iterates the list ’lst’ and applies the function
+			’f’ on the content of the node with index i.
+ *
+ * @param lst	lst to iterate
+ * @param i		index to compare against
+ * @param f		the address of the function to be applied
+ */
+void	ft_lstiter_i(t_list *lst, int i, void (*f)(t_cont *))
 {
 	if (!f)
 		return ;
-	if (!lst || !lst->content) // lst->content can be 0
+	if (!lst || !lst->content)
 		return ;
 	if (lst->next)
-		ft_lstiter(lst->next, f);
-	f(lst->content);
-} */
+		ft_lstiter_i(lst->next, i, f);
+	if (lst->content->index == i)
+		f(lst->content);
+}

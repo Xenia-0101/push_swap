@@ -10,33 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-	Parameters content:
-		The content to create the node with.
-
-	Return value
-		The new node
-
-	External functs.
-		malloc
-
-	Description
-		Allocates (with malloc(3)) and returns a new node.
-		The member variable ’content’ is initialized with
-		the value of the parameter ’content’. The variable
-		’next’ is initialized to NULL.
-*/
-
 #include "../include/libft.h"
 
-t_list	*ft_lstnew(int content)
+/**
+ * @brief	Allocates with calloc and returns a new node.
+ * 			Allocates with calloc a new content.
+ * 			The content.value is initialized with val,
+ * 			the content.index is initialized with idx.
+ * 			The *prev and *next pointers are initialized to NULL.
+ * @param val	The value of content.value.
+ * @param idx	The value of content.index.
+ * @return	The new node.
+ */
+t_list	*ft_lstnew(int val, int idx)
 {
 	t_list	*list;
+	t_cont	*cont;
 
-	list = (t_list *)malloc(sizeof (t_list));
+	list = (t_list *)ft_calloc(1, sizeof (t_list));
 	if (!list)
 		return (NULL);
-	list->content = content;
+	cont = (t_cont *)ft_calloc(1, sizeof (t_cont));
+	if (!cont)
+		return (NULL);
+	cont->value = val;
+	cont->index = idx;
+	list->content = cont;
 	list->next = NULL;
+	list->prev = NULL;
 	return (list);
 }

@@ -27,11 +27,14 @@ Description
 	the node’s content using the function ’del’ given
 	as a parameter and free the node. The memory of
 	’next’ must not be freed.
+
+** Modified version of ft_lstdelone
+	make sure the del function frees the content
 */
 
 #include "../include/libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(int))
+void	ft_lstdelone(t_list *lst, void (*del)(t_cont *))
 {
 	if (!del)
 		return ;
