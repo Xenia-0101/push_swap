@@ -32,7 +32,7 @@
 
 #include "../include/libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(t_cont *))
 {
 	t_list	*temp;
 

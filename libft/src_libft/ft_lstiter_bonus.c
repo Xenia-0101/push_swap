@@ -35,9 +35,9 @@ void	ft_lstiter(t_list *lst, void (*f)(t_cont *))
 		return ;
 	if (!lst || !lst->content)
 		return ;
+	f(lst->content);
 	if (lst->next)
 		ft_lstiter(lst->next, f);
-	f(lst->content);
 }
 /**
  * @brief	Iterates the list ’lst’ and applies the function

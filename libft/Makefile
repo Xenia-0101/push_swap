@@ -54,8 +54,8 @@ SRC_BONUS = \
 		${LIBFT_DIR}/ft_lstlast_bonus.c \
 		${LIBFT_DIR}/ft_lstiter_bonus.c \
 		${LIBFT_DIR}/ft_lstdelone_bonus.c \
-		# ${LIBFT_DIR}/ft_lstclear_bonus.c \
-		# ${LIBFT_DIR}/ft_lstmap_bonus.c \
+		${LIBFT_DIR}/ft_lstclear_bonus.c \
+		${LIBFT_DIR}/ft_lstmap_bonus.c \
 		# ${LIBFT_DIR}/ft_lstsize_bonus.c \
 
 SRC_GNL = \

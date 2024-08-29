@@ -38,10 +38,26 @@ static void ft_incr_index(t_cont *node)
 	node->index++;
 }
 
+static void ft_decr_index(t_cont *node)
+{
+	if (!node)
+		return ;
+	node->index--;
+}
+
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!lst || !new)
 		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
+	while ((*lst)->content->index > 0)
+	{
+		ft_lstiter(*lst, &ft_decr_index);
+	}
 	ft_lstiter(*lst, &ft_incr_index);
 	(*lst)->prev = new;
 	new->next = *lst;
