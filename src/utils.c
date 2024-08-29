@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/28 19:02:30 by xvislock          #+#    #+#             */
-/*   Updated: 2024/08/29 11:40:05 by xvislock         ###   ########.fr       */
+/*   Created: 2024/08/29 13:25:57 by xvislock          #+#    #+#             */
+/*   Updated: 2024/08/29 15:15:01 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-/* sa (swap a): Swap the first 2 elements at the top of stack a.
-Do nothing if there is only one or no elements. */
-
-void ft_swap(t_list *lst)
+void ft_del_cont(t_cont *cont)
 {
-	int temp;
-
-	if (!lst->content || !lst->next->content)
-		return ;
-	temp = lst->content->value;
-	lst->content->value = lst->next->content->value;
-	lst->next->content->value = temp;
+	cont->value = 0;
+	cont->index = 0;
+	free(cont);
 }
-

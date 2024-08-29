@@ -13,7 +13,11 @@ LIBFT_NAME = libft.a
 # *** source code files *** #
 SRC := \
 		main.c \
+		src/ft_push.c \
 		src/ft_swap.c \
+		src/ft_rotate.c \
+		src/ft_rrotate.c \
+		src/utils.c \
 
 OBJ = $(SRC:.c=.o)
 HEADER = -I ./include/

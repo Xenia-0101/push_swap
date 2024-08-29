@@ -6,7 +6,7 @@
 /*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:15:36 by xvislock          #+#    #+#             */
-/*   Updated: 2024/08/29 11:34:32 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/08/29 15:53:38 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,22 @@ int ft_get_num_count(char **in)
 
 void ft_print_by_idx(t_cont *cont)
 {
-	printf("***%d***\n", cont->value);
+	// printf("***%d***\n", cont->value);
+	printf("%d\t%d\n", cont->index, cont->value);
 }
 
+static void ft_free_split(char **str, int len)
+{
+	int i;
+
+	i = 0;
+	while (i < len)
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+}
 int main(void)
 {
 	// assume input in the form of a string
@@ -36,24 +49,23 @@ int main(void)
 	int count = ft_get_num_count(in_2);
 
 	// create struct
-	t_list *lst;
+	t_list *stack_a;
+	t_list *stack_b;
 	t_list *tmp;
 
-	lst = ft_lstnew(55);
-	printf("%d\n", lst->content->value);
+	stack_a = NULL;
+	stack_b = NULL;
 	int i = 0;
 	while (i < count)
 	{
 		tmp = ft_lstnew(ft_atoi(in_2[i]));
-		printf("%d\t%d\n", ft_lstlast(lst)->content->index, ft_lstlast(lst)->content->value);
-		ft_lstadd_back(&lst, tmp);
+		ft_lstadd_back(&stack_a, tmp);
 		i++;
 	}
-	printf("%d\t%d\n", ft_lstlast(lst)->content->index, ft_lstlast(lst)->content->value);
-	ft_lstiter_i(lst, 0, &(ft_print_by_idx));
-	ft_swap(lst);
-	ft_lstiter_i(lst, 0, &(ft_print_by_idx));
 
+	ft_lstclear(&stack_a, &ft_del_cont);
+	ft_lstclear(&stack_b, &ft_del_cont);
+	ft_free_split(in_2, count);
 	return (0);
 }
 

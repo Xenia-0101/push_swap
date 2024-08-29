@@ -6,7 +6,7 @@
 /*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:16:23 by xvislock          #+#    #+#             */
-/*   Updated: 2024/08/28 19:08:00 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/08/29 15:15:06 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,13 @@
 
 /* *** Prototypes *** */
 
-/* Utility Functions */
+/* list manipulations */
 void ft_swap(t_list *lst);
+void ft_push(t_list **lst1, t_list **lst2);
+void ft_rotate(t_list **lst);
+void ft_rrotate(t_list **lst);
+
+/* utils.c */
+void ft_del_cont(t_cont *cont);
 
 #endif
