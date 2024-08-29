@@ -24,6 +24,7 @@
 		None
 
 	Description
+		Sets the index of 'new' as index of last node + 1.
 		Adds the node ’new’ at the end of the list.
 */
 
@@ -41,5 +42,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		return ;
 	}
 	t_lst = ft_lstlast(*lst);
+	new->content->index = t_lst->content->index + 1;
 	t_lst->next = new;
+	new->prev = t_lst;
 }

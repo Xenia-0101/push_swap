@@ -16,13 +16,12 @@
  * @brief	Allocates with calloc and returns a new node.
  * 			Allocates with calloc a new content.
  * 			The content.value is initialized with val,
- * 			the content.index is initialized with idx.
+ * 			the content.index is initialized to 0.
  * 			The *prev and *next pointers are initialized to NULL.
  * @param val	The value of content.value.
- * @param idx	The value of content.index.
  * @return	The new node.
  */
-t_list	*ft_lstnew(int val, int idx)
+t_list	*ft_lstnew(int val)
 {
 	t_list	*list;
 	t_cont	*cont;
@@ -34,9 +33,11 @@ t_list	*ft_lstnew(int val, int idx)
 	if (!cont)
 		return (NULL);
 	cont->value = val;
-	cont->index = idx;
+	cont->index = 0;
 	list->content = cont;
 	list->next = NULL;
 	list->prev = NULL;
 	return (list);
 }
+
+

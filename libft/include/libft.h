@@ -34,15 +34,15 @@ typedef struct s_cont
 {
 	int		value;
 	int		index;
-}			t_cont;
+}	t_cont;
 
 // Linked list structure
 
 typedef struct s_list
 {
-	t_cont	*content;
-	t_list	*prev;
-	t_list	*next;
+	t_cont			*content;
+	struct s_list	*prev;
+	struct s_list	*next;
 }	t_list;
 
 /* typedef struct s_list
@@ -100,7 +100,7 @@ void	ft_putnbr_fd(int n, int fd);
 
 // Bonus part
 
-t_list	*ft_lstnew(int val, int idx);
+t_list	*ft_lstnew(int val);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 // int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);

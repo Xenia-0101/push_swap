@@ -33,8 +33,6 @@
 		delete the content of a node if needed.
 */
 
-// line 51 : do I need to create temp var t_lst = lst ?
-
 #include "../include/libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
