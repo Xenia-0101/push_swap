@@ -6,6 +6,9 @@ RM = rm -rf
 CC = cc
 AR = ar rc
 
+LSTS = src/lists/
+UTLS = src/utils/
+
 # *** libft library *** #
 LIBFT_DIR = libft
 LIBFT_NAME = libft.a
@@ -18,6 +21,29 @@ SRC := \
 		src/ft_rotate.c \
 		src/ft_rrotate.c \
 		src/utils.c \
+		src/ft_free.c \
+		src/ft_init.c \
+		src/ft_parse_args.c \
+		${LSTS}ft_actadd_back.c \
+		${LSTS}ft_actadd_front.c \
+		${LSTS}ft_actclear.c \
+		${LSTS}ft_actdelone.c \
+		${LSTS}ft_actiter.c \
+		${LSTS}ft_actlast.c \
+		${LSTS}ft_actnew.c \
+		${LSTS}ft_actsize.c \
+		${LSTS}ft_test_act.c \
+		${LSTS}ft_dlstadd_back.c \
+		${LSTS}ft_dlstadd_front.c \
+		${LSTS}ft_dlstclear.c \
+		${LSTS}ft_dlstdelone.c \
+		${LSTS}ft_dlstiter.c \
+		${LSTS}ft_dlstlast.c \
+		${LSTS}ft_dlstnew.c \
+		${LSTS}ft_dlstsize.c \
+		${UTLS}ft_atoi_check.c \
+
+
 
 OBJ = $(SRC:.c=.o)
 HEADER = -I ./include/
@@ -49,4 +75,4 @@ re: fclean all
 
 .PHONY: all clean fclean re libft
 
-# ls *.c | sed 's/$/\\/'
+# ls *.c | sed 's/$/ \\/'
