@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:15:36 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/01 23:21:35 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/01 23:44:44 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,21 @@ void ft_print_lst(t_dlist *lst)
 	// printf("***%d***\n", cont->value);
 	printf("%ld\t%d\n", lst->index, lst->value);
 }
-int ft_is_sorted(t_map *map)
-{
-	int is_asc;
-	int is_des;
-	t_dlist *curr;
-	t_dlist *next;
 
-	is_asc = 1;
-	is_des = 2;
-	curr = map->stack_a->lst;
-	while (curr->next && (is_asc || is_des))
-	{
-		if (curr->value < curr->next->value)
-			is_des = 0;
-		else if (curr->value > curr->next->value)
-			is_asc = 0;
-		curr = curr->next;
-	}
-	map->state = is_asc + is_des;
-	return (map->state);
+void ft_sort(t_map **map)
+{
+	ft_dlstiter((*map)->stack_a->lst, &ft_print_lst);
+};
+void ft_sort_reverse(t_map **map)
+{
+	printf("sort reverse\n");
 }
+
+void ft_return_sorted(t_map **map)
+{
+	printf("is sorted\n");
+}
+
 int main(int argc, char **argv)
 {
 	t_stack *stack_a;
@@ -58,11 +52,16 @@ int main(int argc, char **argv)
 	// initialize map
 	ft_init_map(&map, stack_a);
 
-	// check if list is sorted
-	if (ft_is_sorted(map))			// TODO: treat sorted list
-		printf("\033[0;32mlist is sorted\033[0m\n");
+	ft_is_sorted(map);
 
-	ft_dlstiter(stack_a->lst, &ft_print_lst);
+	// check if list is sorted
+	if (!map->state)			// TODO: treat sorted list
+		ft_sort(&map);	// SORT;
+	if (map->state == 2)
+		ft_sort_reverse(&map);	// SORT REVERSE
+	if (map->state == 1)
+		ft_return_sorted(&map);	// RETURN SORTED
+
 	// printf("%d %d\n",stack_a->min, stack_a->max);
 	ft_free_map(&map);
 	// free(tab);

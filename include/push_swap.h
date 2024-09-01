@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:16:23 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/01 23:18:14 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/01 23:36:28 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,8 @@ void	ft_init_map(t_map **map, t_stack *stack_a);
 void	ft_parse_args(t_stack **stack, int argc, char **argv);
 /* ft_is_unique */
 int		ft_is_unique(t_stack **stack);
+/* ft_is_sorted */
+int	ft_is_sorted(t_map *map);
 /* list manipulations */
 void	ft_swap(t_list *lst);
 void	ft_push(t_list **lst1, t_list **lst2);
