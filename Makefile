@@ -23,6 +23,7 @@ SRC := \
 		src/utils.c \
 		src/ft_free.c \
 		src/ft_init.c \
+		src/ft_is_unique.c \
 		src/ft_parse_args.c \
 		${LSTS}ft_actadd_back.c \
 		${LSTS}ft_actadd_front.c \

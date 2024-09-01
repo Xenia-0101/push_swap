@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:16:23 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/01 15:47:48 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/01 23:18:14 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ typedef struct s_map
 	size_t	size;
 	int		min;
 	int		max;
+	int		state; // to keep hold of sorted state
 }	t_map;
 
 /* *** Prototypes *** */
@@ -90,22 +91,24 @@ void	ft_dlstdelone(t_dlist *lst);
 void	ft_dlstclear(t_dlist **lst);
 
 /* utils */
-int	ft_atoi_check(t_stack **stack, const char *nptr);
+int		ft_atoi_check(t_stack **stack, const char *nptr);
 
 /* ft_free */
 void	ft_free_split(char **str, int len);
 void	ft_free_stack(t_stack **stack);
+void	ft_free_map(t_map **map);
 /* ft_init */
 void	ft_init_stack_a(t_stack **stack);
+void	ft_init_map(t_map **map, t_stack *stack_a);
 /* ft_parse_args */
 void	ft_parse_args(t_stack **stack, int argc, char **argv);
-
+/* ft_is_unique */
+int		ft_is_unique(t_stack **stack);
 /* list manipulations */
 void	ft_swap(t_list *lst);
 void	ft_push(t_list **lst1, t_list **lst2);
 void	ft_rotate(t_list **lst);
 void	ft_rrotate(t_list **lst);
-
 /* utils.c */
 void	ft_del_cont(t_cont *cont);
 size_t	ft_get_num_count(char **in);

@@ -24,6 +24,12 @@ int	ft_atoi_check(t_stack **stack, const char *nptr)
 	int	sign;
 	int	i;
 
+	if (!nptr || !*nptr)
+	{
+		write(2, "\033[0;31mERROR: empty argument.\033[0m\n", 34);
+		ft_free_stack(stack);
+		exit(1);
+	}
 	res = 0;
 	sign = 1;
 	i = 0;
@@ -44,7 +50,7 @@ int	ft_atoi_check(t_stack **stack, const char *nptr)
 	}
 	if (nptr[i])
 	{
-		write(2, "ERROR: Invalid format of arguments.\n", 36);
+		write(2, "\033[0;31mERROR: Invalid format of arguments.\033[0m\n", 47);
 		ft_free_stack(stack);
 		exit(1);
 	}

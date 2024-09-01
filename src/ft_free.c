@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 14:48:51 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/01 15:45:03 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/01 23:19:08 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_free_split(char **str, int len)
 {
 	int	i;
-	
+
 	if (!str)
 		return ;
 	i = 0;
@@ -27,19 +27,29 @@ void	ft_free_split(char **str, int len)
 	free(str);
 }
 
-
 void	ft_free_stack(t_stack **stack)
 {
-	printf("free stack\n");
 	ft_dlstclear(&(*stack)->lst);
-	printf("dlist is cleared\n");
 	ft_free_split((*stack)->ph, (*stack)->size);
 	(*stack)->max = 0;
 	(*stack)->min = 0;
 	(*stack)->size = 0;
 	(*stack)->cheap = 0;
-	printf("vals set to 0\n");
 	free(*stack);
-	printf("all done\n");
+}
+
+void	ft_free_map(t_map **map)
+{
+	if ((*map)->stack_a)
+		ft_free_stack(&(*map)->stack_a);
+	if ((*map)->stack_b)
+		ft_free_stack(&((*map)->stack_b));
+	// if ((*map)->acts)							// TODO
+	// 	ft_free_acts(((*map)->acts));
+	(*map)->size = 0;
+	(*map)->min = 0;
+	(*map)->max = 0;
+	(*map)->state = 0;
+	free(*map);
 }
 

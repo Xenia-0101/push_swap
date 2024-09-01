@@ -1,0 +1,18 @@
+5 6 8 1 0 15 22 101 4 			ok
+5 6 8 1 15 22 101 4 			ok - no zero
+-5 -6 -8 -1 0 -15 -22 -101 -4	ok - negatives
+-5 -6 -8 -1 -15 -22 -101 -4	ok - negatives, no zero
+5 6 8 1 0 15 22 101 4a			formatting error
+5 6 8 1 0 1a5 22 101 4			formatting error
+5 6 8  1 0 1.5 22 101 4			ok
+5 6 8 1 0 15 22 --101 4			formatting error
+5 6 8 1 0 15 22 -101 4			ok
+
+5 5 6 8 1 0 15 22 101 4 		not unique
+5 6 8 1 0 15 22 5 101 4 		not unique
+5 6 8 1 0 15 22 101 4 5			not unique
+
+5 6 8 1 0 5 15 22 101 4 3		odd, not unique
+3 6 8 1 0 5 15 22 101 4 5		odd, not unique
+5 6 8 1 0 15 0 22 101 4 3		odd, not unique
+5 6 8 1 0 0 15 22 101 4 3		odd, not unique
