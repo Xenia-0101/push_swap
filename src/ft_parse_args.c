@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 14:45:40 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/01 22:49:21 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/01 23:50:49 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	ft_parse_args(t_stack **stack, int argc, char **argv)
 {
 	if (argc == 1)
 	{
-		write(2, "\033[0;31mERROR: No argument provided.\033[0m\n", 40);
+		write(2, "\033[0;31mERROR: No argument provided.\033[0m\n", 40);		// TODO: return prompt
 		ft_free_stack(stack);
 		exit(1) ;
 	}
