@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:15:36 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/02 07:02:20 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/02 09:55:36 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,10 @@ void ft_print_lst(t_dlist *lst)
 
 void ft_sort(t_map **map)
 {
-	printf("Sorted\n");
+	printf("Sorting\n");
 	ft_dlstiter((*map)->stack_a->lst, &ft_print_lst);
 }
-void ft_sort_reverse(t_map **map)
-{
-	printf("sort reverse\n");
-}
+
 
 void ft_clean_exit(t_map **map)
 {
@@ -55,23 +52,18 @@ int main(int argc, char **argv)
 	ft_init_map(&map, stack_a);
 
 	ft_is_sorted(map);
-	printf(" ******** Checker *******\n");
-	printf("STATE: %d\n\n", map->state);
 
 	// check if list is sorted
-	if (!map->state)			// TODO: treat sorted list
+	if (!map->state)
 	{
-		printf("go get sorted\n");
 		ft_sort(&map);	// SORT;
 	}
 	if (map->state == 2)
 	{
-		printf("go get reversed\n");
 		ft_sort_reverse(&map);	// SORT REVERSE
 	}
-	if (map->state == 1)
+	if (map->state == 1)			// TODO: treat sorted list
 	{
-		printf("go exit\n");
 		ft_clean_exit(&map);	// RETURN SORTED
 	}
 

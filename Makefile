@@ -8,6 +8,7 @@ AR = ar rc
 
 LSTS = src/lists/
 UTLS = src/utils/
+ACTS = src/actions/
 
 # *** libft library *** #
 LIBFT_DIR = libft
@@ -16,16 +17,17 @@ LIBFT_NAME = libft.a
 # *** source code files *** #
 SRC := \
 		main.c \
-		src/ft_push.c \
-		src/ft_swap.c \
-		src/ft_rotate.c \
-		src/ft_rrotate.c \
+		${ACTS}ft_push.c \
+		${ACTS}ft_swap.c \
+		${ACTS}ft_rotate.c \
+		${ACTS}ft_rrotate.c \
 		src/utils.c \
 		src/ft_free.c \
 		src/ft_init.c \
 		src/ft_is_unique.c \
 		src/ft_is_sorted.c \
 		src/ft_parse_args.c \
+		src/ft_sort_reverse.c \
 		${LSTS}ft_actadd_back.c \
 		${LSTS}ft_actadd_front.c \
 		${LSTS}ft_actclear.c \

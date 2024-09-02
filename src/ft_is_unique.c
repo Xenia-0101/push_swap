@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_unique.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 21:16:55 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/01 23:03:07 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/02 09:39:26 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	ft_unique_odd(t_stack **stack, int *tab)
 	back = ft_dlstlast(front);
 	while (front->index != (*stack)->size / 2)
 	{
-		if ((front->value == back->value))
+		if (front->value == back->value)
 		{
 			return (0);
 		}
@@ -67,7 +67,7 @@ static int	ft_unique_even(t_stack **stack, int *tab)
 	i = 0;
 	while (front->index != (*stack)->size / 2)
 	{
-		if ((front->value == back->value))
+		if (front->value == back->value)
 			return (0);
 		j = 0;
 		while (j < (front->index + 1) / 2)
@@ -92,6 +92,12 @@ int	ft_is_unique(t_stack **stack)
 	int	res;
 
 	tab = ft_calloc((*stack)->size, sizeof (int));
+	if (!tab)
+	{
+		ft_free_stack(stack);
+		free(tab);
+		exit(1);
+	}
 	if ((*stack)->size % 2)
 		res = ft_unique_odd(stack, tab);
 	else

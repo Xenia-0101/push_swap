@@ -45,3 +45,6 @@ echo "\033[1;35m odd, KO \033[0m"
 ./push_swap "5 6 8 1 0 15 0 22 101 4 3"
 echo "\033[1;35m odd, KO \033[0m"
 ./push_swap "5 6 8 1 0 0 15 22 101 4 3"
+
+echo "\033[1;33m even, OK \033[0m"
+./push_swap "9 8 7 6 5 4 3 78"

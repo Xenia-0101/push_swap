@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:16:23 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/01 23:36:28 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/02 09:28:53 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,13 +100,18 @@ void	ft_free_map(t_map **map);
 /* ft_init */
 void	ft_init_stack_a(t_stack **stack);
 void	ft_init_map(t_map **map, t_stack *stack_a);
+void	ft_init_stack_b(t_map **map);
 /* ft_parse_args */
 void	ft_parse_args(t_stack **stack, int argc, char **argv);
 /* ft_is_unique */
 int		ft_is_unique(t_stack **stack);
 /* ft_is_sorted */
 int	ft_is_sorted(t_map *map);
-/* list manipulations */
+/* ft_sort_reverse */
+void	ft_sort_reverse(t_map **map);
+/* actions */
+void	ft_pa(t_map **map);
+void	ft_pb(t_map **map);
 void	ft_swap(t_list *lst);
 void	ft_push(t_list **lst1, t_list **lst2);
 void	ft_rotate(t_list **lst);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 15:47:04 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/01 23:19:25 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/02 09:54:49 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,22 @@ void	ft_init_stack_a(t_stack **stack)
 	(*stack)->size = 0;
 	(*stack)->min = 0;
 	(*stack)->max = 0;
+	(*stack)->cheap = 0;
+}
+
+void	ft_init_stack_b(t_map **map)
+{
+	t_stack	**stack;
+
+	stack = &(*map)->stack_b;
+	*stack = (t_stack *)ft_calloc(1, sizeof (t_stack));
+	if (!*stack)
+		return ;
+	(*stack)->lst = NULL;
+	(*stack)->ph = NULL;
+	(*stack)->size = 0;
+	(*stack)->min = (*map)->stack_a->lst->value;
+	(*stack)->max = (*map)->stack_a->lst->value;
 	(*stack)->cheap = 0;
 }
 
