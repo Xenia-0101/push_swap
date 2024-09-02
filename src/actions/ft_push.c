@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:29:53 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/02 09:21:18 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/02 23:34:22 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,42 +65,44 @@ void ft_pb(t_map **map)
 {
 	t_dlist *new;
 	t_dlist *temp;
-	t_dlist	*lst_a;
-	t_dlist *lst_b;
+	t_dlist	**lst_a;
+	t_dlist **lst_b;
 
-	lst_a = (*map)->stack_a->lst;
-	lst_b = (*map)->stack_b->lst;
-	if (!lst_a || !lst_a->value)
+	lst_a = &(*map)->stack_a->lst;
+	lst_b = &(*map)->stack_b->lst;
+	if (!*lst_a || !(*lst_a)->value)
 		return ;
-	new = ft_dlstnew(lst_a->value);
-	temp = lst_a;
-	lst_a = lst_a->next;
-	lst_a->prev = NULL;
+	new = ft_dlstnew((*lst_a)->value);
+	temp = *lst_a;
+	*lst_a = (*lst_a)->next;
+	if (*lst_a)
+		(*lst_a)->prev = NULL;
 	ft_dlstdelone(temp);
-	ft_dlstadd_front(&lst_b, new);
+	ft_dlstadd_front(lst_b, new);
 	(*map)->stack_a->size--;
 	(*map)->stack_b->size++;
-	ft_dlstiter(lst_a, &ft_decr_idx);
+	ft_dlstiter((*lst_a), &ft_decr_idx);
 }
 
 void ft_pa(t_map **map)
 {
 	t_dlist *new;
 	t_dlist *temp;
-	t_dlist	*lst_a;
-	t_dlist *lst_b;
+	t_dlist	**lst_a;
+	t_dlist **lst_b;
 
-	lst_a = (*map)->stack_a->lst;
-	lst_b = (*map)->stack_b->lst;
-	if (!lst_b || !lst_b->value)
+	lst_a = &(*map)->stack_a->lst;
+	lst_b = &(*map)->stack_b->lst;
+	if (!*lst_b || !(*lst_b)->value)
 		return ;
-	new = ft_dlstnew(lst_b->value);
-	temp = lst_b;
-	lst_b = lst_b->next;
-	lst_b->prev = NULL;
+	new = ft_dlstnew((*lst_b)->value);
+	temp = *lst_b;
+	*lst_b = (*lst_b)->next;
+	if (*lst_b)
+		(*lst_b)->prev = NULL;
 	ft_dlstdelone(temp);
-	ft_dlstadd_front(&lst_a, new);
+	ft_dlstadd_front(lst_a, new);
 	(*map)->stack_a->size++;
 	(*map)->stack_b->size--;
-	ft_dlstiter(lst_b, &ft_decr_idx);
+	ft_dlstiter((*lst_b), &ft_decr_idx);
 }

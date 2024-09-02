@@ -3,15 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 11:42:27 by xvislock          #+#    #+#             */
-/*   Updated: 2024/08/29 15:48:07 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/02 23:23:05 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+void ft_decr_idx(t_dlist *lst)
+{
+	lst->index--;
+}
 /**
  * @brief	Rotates the list variable lst is pointing to,
  * 			so that the fires element becomes the last one.
@@ -38,4 +42,32 @@ void ft_rotate(t_list **lst)
 	ft_lstdelone(tmp, &ft_del_cont);
 	ft_lstadd_back(lst, first);
 	return ;
+}
+
+void ft_rb(t_map **map)
+{
+	t_dlist *new;
+	t_dlist *first;
+
+	first = (*map)->stack_b->lst;
+	(*map)->stack_b->lst = first->next;
+	new = ft_dlstnew((first)->value);
+	(first)->next->prev = NULL;
+	ft_dlstdelone(first);
+	ft_dlstiter((*map)->stack_b->lst, &ft_decr_idx);
+	ft_dlstadd_back(&(*map)->stack_b->lst, new);
+}
+
+void ft_ra(t_map **map)
+{
+	t_dlist *new;
+	t_dlist *first;
+
+	first = (*map)->stack_a->lst;
+	(*map)->stack_a->lst = first->next;
+	new = ft_dlstnew((first)->value);
+	(first)->next->prev = NULL;
+	ft_dlstdelone(first);
+	ft_dlstiter((*map)->stack_a->lst, &ft_decr_idx);
+	ft_dlstadd_back(&(*map)->stack_a->lst, new);
 }

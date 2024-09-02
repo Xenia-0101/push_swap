@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rrotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:12:24 by xvislock          #+#    #+#             */
-/*   Updated: 2024/08/29 14:28:29 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/02 23:07:44 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,28 @@ void ft_rrotate(t_list **lst)
 	last = ft_lstnew(tmp->content->value);
 	ft_lstdelone(tmp, &ft_del_cont);
 	ft_lstadd_front(lst, last);
+}
+
+void ft_rrb(t_map **map)
+{
+	t_dlist *new;
+	t_dlist *last;
+
+	last = ft_dlstlast((*map)->stack_b->lst);
+	new = ft_dlstnew((last)->value);
+	(last)->prev->next = NULL;
+	ft_dlstdelone(last);
+	ft_dlstadd_front(&(*map)->stack_b->lst, new);
+}
+
+void ft_rra(t_map **map)
+{
+	t_dlist *new;
+	t_dlist *last;
+
+	last = ft_dlstlast((*map)->stack_a->lst);
+	new = ft_dlstnew((last)->value);
+	(last)->prev->next = NULL;
+	ft_dlstdelone(last);
+	ft_dlstadd_front(&(*map)->stack_a->lst, new);
 }

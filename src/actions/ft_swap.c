@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 19:02:30 by xvislock          #+#    #+#             */
-/*   Updated: 2024/08/29 11:40:05 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/02 23:41:24 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,20 @@ void ft_swap(t_list *lst)
 	temp = lst->content->value;
 	lst->content->value = lst->next->content->value;
 	lst->next->content->value = temp;
+}
+
+void ft_sa(t_map **map)
+{
+	int val;
+	t_act **act;
+	t_dlist *temp;
+
+	temp = (*map)->stack_a->lst->next;
+	val = (*map)->stack_a->lst->value;
+	act = &(*map)->stack_a->lst->acts;
+	(*map)->stack_a->lst->value = temp->value;
+	(*map)->stack_a->lst->acts = temp->acts;
+	temp->value = val;
+	temp->acts = *act;
 }
 
