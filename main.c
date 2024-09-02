@@ -3,20 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:15:36 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/02 09:55:36 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/02 22:34:22 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/push_swap.h"
-
-void ft_print_lst(t_dlist *lst)
-{
-	// printf("***%d***\n", cont->value);
-	printf("%ld\t%d\n", lst->index, lst->value);
-}
 
 void ft_sort(t_map **map)
 {

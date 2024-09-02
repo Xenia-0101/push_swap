@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:16:23 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/02 09:28:53 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/02 23:39:07 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,11 @@ void	ft_sort_reverse(t_map **map);
 /* actions */
 void	ft_pa(t_map **map);
 void	ft_pb(t_map **map);
+void	ft_ra(t_map **map);
+void	ft_rb(t_map **map);
+void	ft_rra(t_map **map);
+void	ft_rrb(t_map **map);
+void	ft_sa(t_map **map);
 void	ft_swap(t_list *lst);
 void	ft_push(t_list **lst1, t_list **lst2);
 void	ft_rotate(t_list **lst);
@@ -119,5 +124,6 @@ void	ft_rrotate(t_list **lst);
 /* utils.c */
 void	ft_del_cont(t_cont *cont);
 size_t	ft_get_num_count(char **in);
+void ft_print_lst(t_dlist *lst);
 
 #endif
