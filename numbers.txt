@@ -16,3 +16,7 @@
 3 6 8 1 0 5 15 22 101 4 5		odd, not unique
 5 6 8 1 0 15 0 22 101 4 3		odd, not unique
 5 6 8 1 0 0 15 22 101 4 3		odd, not unique
+
+1 0 -4							odd, sorted, max firts
+-4 1 0							odd, sorted, max second
+

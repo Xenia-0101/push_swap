@@ -6,13 +6,13 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 08:42:46 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/02 23:38:39 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/03 23:45:53 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_sort_reverse(t_map **map)
+static void ft_reverse_algo(t_map **map)
 {
 	ft_init_stack_b(map);
 	ft_pb(map);
@@ -35,4 +35,11 @@ void ft_sort_reverse(t_map **map)
 	}
 	ft_free_map(map);
 	exit (0);
+}
+void ft_sort_reverse(t_map **map)
+{
+	if ((*map)->size == 3)
+		ft_sort_3(map);
+	else
+		ft_reverse_algo(map);
 }

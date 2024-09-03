@@ -6,18 +6,11 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:15:36 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/02 22:34:22 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/03 23:26:54 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/push_swap.h"
-
-void ft_sort(t_map **map)
-{
-	printf("Sorting\n");
-	ft_dlstiter((*map)->stack_a->lst, &ft_print_lst);
-}
-
 
 void ft_clean_exit(t_map **map)
 {
@@ -42,6 +35,7 @@ int main(int argc, char **argv)
 		ft_free_stack(&stack_a);
 		exit(1);
 	}
+	
 	// initialize map
 	ft_init_map(&map, stack_a);
 
