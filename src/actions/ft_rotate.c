@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 11:42:27 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/02 23:23:05 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/03 23:22:54 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,13 @@ void ft_rb(t_map **map)
 	t_dlist *new;
 	t_dlist *first;
 
+	if (!(*map)->stack_b->lst)
+		return ;
+	if (!(*map)->stack_b->lst->value
+		|| !(*map)->stack_b->lst->next)
+		return ;
+	if ((*map)->stack_b->size == 1)
+		return ;
 	first = (*map)->stack_b->lst;
 	(*map)->stack_b->lst = first->next;
 	new = ft_dlstnew((first)->value);
@@ -63,6 +70,13 @@ void ft_ra(t_map **map)
 	t_dlist *new;
 	t_dlist *first;
 
+	if (!(*map)->stack_a->lst)
+		return ;
+	if (!(*map)->stack_a->lst->value
+		|| !(*map)->stack_a->lst->next)
+		return ;
+	if ((*map)->stack_a->size == 1)
+		return ;
 	first = (*map)->stack_a->lst;
 	(*map)->stack_a->lst = first->next;
 	new = ft_dlstnew((first)->value);
