@@ -48,3 +48,51 @@ echo "\033[1;35m odd, KO \033[0m"
 
 echo "\033[1;33m even, OK \033[0m"
 ./push_swap "9 8 7 6 5 4 3 78"
+
+echo "\033[1;33m OK \033[0m"
+./push_swap "1 0 -4"
+
+echo "\033[1;33m OK \033[0m"
+./push_swap "-4 1 0"
+
+echo "\033[1;33m OK \033[0m"
+./push_swap "1"
+
+echo "\033[1;33m OK \033[0m"
+./push_swap "1 2"
+
+echo "\033[1;33m OK \033[0m"
+./push_swap "2 1"
+
+echo "\033[1;33m OK \033[0m"
+./push_swap "0 5"
+
+echo "\033[1;33m OK \033[0m"
+./push_swap "5 0"
+
+echo "\033[1;33m OK \033[0m"
+./push_swap "1 2 3"
+
+echo "\033[1;33m OK \033[0m"
+./push_swap "1 3 2"
+
+echo "\033[1;33m OK \033[0m"
+./push_swap "3 1 2"
+
+echo "\033[1;33m OK \033[0m"
+./push_swap "3 2 1"
+
+echo "\033[1;33m OK \033[0m"
+./push_swap "7 5 4 6"
+
+echo "\033[1;33m OK \033[0m"
+./push_swap "5 7 4 6"
+
+echo "\033[1;33m OK \033[0m"
+./push_swap "5 7 6 4"
+
+echo "\033[1;33m OK \033[0m"
+./push_swap "4 5 7 6"
+
+echo "\033[1;33m OK \033[0m"
+./push_swap "1 5 4 6"

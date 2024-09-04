@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:29:53 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/04 12:06:33 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/04 13:02:47 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void ft_pb(t_map **map)
 
 	lst_a = &(*map)->stack_a->lst;
 	lst_b = &(*map)->stack_b->lst;
-	if (!*lst_a)
+	if (!*lst_a || !(*lst_a)->value)
 		return ;
 	ft_check_limits(&(*map)->stack_a, &(*map)->stack_b);
 	new = ft_dlstnew((*lst_a)->value);
