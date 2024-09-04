@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:16:23 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/03 23:44:15 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/04 12:52:18 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,10 @@ void	ft_dlstadd_back(t_dlist **lst, t_dlist *new);
 void	ft_dlstadd_front(t_dlist **lst, t_dlist *new);
 void	ft_dlstiter(t_dlist *lst, void (*f)(t_dlist *));
 void	ft_dlstiter_i(t_dlist *lst, size_t i, void (*f)(t_dlist *));
-size_t	ft_dlstiter_v(t_dlist *lst, size_t v);
+size_t	ft_dlstiter_v(t_dlist *lst, int v);
+size_t	ft_dlstiter_v_2(t_dlist *lst, int v, int *tv);
+size_t	ft_dlstiter_v_3(t_dlist *lst, int v, int *tv);
+size_t	ft_dlstiter_v_4(t_dlist *lst, int v);
 t_dlist	*ft_dlstlast(t_dlist *lst);
 size_t	ft_dlstsize(t_dlist *lst);
 void	ft_dlstdelone(t_dlist *lst);

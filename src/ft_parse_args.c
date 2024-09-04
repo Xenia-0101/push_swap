@@ -6,11 +6,17 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 14:45:40 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/01 23:50:49 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/04 08:50:51 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void ft_init_limits(t_stack **stack, int v)
+{
+	(*stack)->min = v;
+	(*stack)->max = v;
+}
 
 static void	ft_parse_long(t_stack **st, char *arg)
 {
@@ -25,6 +31,7 @@ static void	ft_parse_long(t_stack **st, char *arg)
 	}
 	(*st)->ph = ft_split(arg, ' ');
 	(*st)->size = ft_get_num_count((*st)->ph);
+	ft_init_limits(st, ft_atoi((*st)->ph[0]));
 	i = 0;
 	while (i < (*st)->size)
 	{
@@ -44,6 +51,7 @@ static void	ft_parse_many(t_stack **stack, int argc, char **argv)
 	int		i;
 
 	(*stack)->size = argc - 1;
+	ft_init_limits(stack, ft_atoi(argv[1]));
 	i = 1;
 	while (i < argc)
 	{

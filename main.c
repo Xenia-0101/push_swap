@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:15:36 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/03 23:26:54 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/04 08:43:35 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 		ft_free_stack(&stack_a);
 		exit(1);
 	}
-	
+
 	// initialize map
 	ft_init_map(&map, stack_a);
 
@@ -44,6 +44,7 @@ int main(int argc, char **argv)
 	// check if list is sorted
 	if (!map->state)
 	{
+		printf("max a: %d\t min a: %d\tsize a: %ld\n", (map)->stack_a->max, (map)->stack_a->min, (map)->stack_a->size);
 		ft_sort(&map);	// SORT;
 	}
 	if (map->state == 2)
