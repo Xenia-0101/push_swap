@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:16:23 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/04 12:52:18 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/05 11:27:48 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,25 @@
 # include "../libft/include/libft.h"
 
 /* *** Sturctures *** */
+
+// Pun square
+/**
+ *
+ *				|------+------+------+------|
+ *		r[0] : 	|  ia  |   0  |  ib  |   0  |
+ *				|------+------+------+------|
+ *		r[1] : 	|  ia  |   0  |   0  | s-ib |
+ *				|------+------+------+------|
+ *		r[2] : 	|   0  | s-ia |  ib  |   0  |
+ *				|------+------+------+------|
+ *		r[3] : 	|   0  | s-ia |   0  | s-ib |
+ *				|------+------+------+------|
+ */
+
+typedef struct s_pun
+{
+	int		v[4][4];
+}	t_pun;
 
 // Action list structure
 typedef struct s_act
@@ -126,8 +145,12 @@ void	ft_pa(t_map **map);
 void	ft_pb(t_map **map);
 void	ft_ra(t_map **map);
 void	ft_rb(t_map **map);
+void	ft_ra_x(t_map **map, int i);
+void	ft_rb_x(t_map **map, int i);
 void	ft_rra(t_map **map);
 void	ft_rrb(t_map **map);
+void	ft_rra_x(t_map **map, int i);
+void	ft_rrb_x(t_map **map, int i);
 void	ft_sa(t_map **map);
 void	ft_sb(t_map **map);
 
@@ -135,5 +158,7 @@ void	ft_sb(t_map **map);
 void	ft_del_cont(t_cont *cont);
 size_t	ft_get_num_count(char **in);
 void ft_print_lst(t_dlist *lst);
+int ft_max(int a, int b);
+int ft_min_tab(int *tab, int s);
 
 #endif

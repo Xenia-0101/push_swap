@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:12:24 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/02 23:07:44 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/05 11:26:52 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,22 @@ void ft_rra(t_map **map)
 	(last)->prev->next = NULL;
 	ft_dlstdelone(last);
 	ft_dlstadd_front(&(*map)->stack_a->lst, new);
+}
+
+void ft_rra_x(t_map **map, int i)
+{
+	while (i > 0)
+	{
+		ft_rra(map);
+		i--;
+	}
+}
+
+void ft_rrb_x(t_map **map, int i)
+{
+	while (i > 0)
+	{
+		ft_rrb(map);
+		i--;
+	}
 }

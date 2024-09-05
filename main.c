@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:15:36 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/04 08:43:35 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/05 11:51:46 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int main(int argc, char **argv)
 
 	// initialize map
 	ft_init_map(&map, stack_a);
-
 	ft_is_sorted(map);
 
 	// check if list is sorted

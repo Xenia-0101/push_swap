@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 19:02:30 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/03 23:18:54 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/05 07:58:09 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,7 @@ void ft_sa(t_map **map)
 
 	if (!(*map)->stack_a->lst)
 		return ;
-	if (!(*map)->stack_a->lst->value
-		|| !(*map)->stack_a->lst->next)
+	if (!(*map)->stack_a->lst->next)
 		return ;
 	temp = (*map)->stack_a->lst->next;
 	val = (*map)->stack_a->lst->value;
@@ -54,8 +53,7 @@ void ft_sb(t_map **map)
 
 	if (!(*map)->stack_b->lst)
 		return ;
-	if (!(*map)->stack_b->lst->value
-		|| !(*map)->stack_b->lst->next)
+	if (!(*map)->stack_b->lst->next)
 		return ;
 	temp = (*map)->stack_b->lst->next;
 	val = (*map)->stack_b->lst->value;

@@ -96,3 +96,18 @@ echo "\033[1;33m OK \033[0m"
 
 echo "\033[1;33m OK \033[0m"
 ./push_swap "1 5 4 6"
+
+echo "\033[1;33m OK 4 5 7 6 9\033[0m"
+./push_swap "4 5 7 6 9"
+
+echo "\033[1;33m OK 4 0 7 6 9\033[0m"
+./push_swap "4 0 7 6 9"
+
+echo "\033[1;33m OK 9 5 1 0 8\033[0m"
+./push_swap "9 5 1 0 8"
+
+echo "\033[1;33m OK -5 8 1 3 0\033[0m"
+./push_swap "-5 8 1 3 0"
+
+echo "\033[1;33m OK 5 8 2 10 3\033[0m"
+./push_swap "5 8 2 10 3"

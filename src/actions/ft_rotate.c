@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 11:42:27 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/03 23:22:54 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/05 12:16:29 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,9 @@ void ft_rb(t_map **map)
 
 	if (!(*map)->stack_b->lst)
 		return ;
-	if (!(*map)->stack_b->lst->value
-		|| !(*map)->stack_b->lst->next)
+	// if (!(*map)->stack_b->lst->value
+	// 	|| !(*map)->stack_b->lst->next)
+	if (!(*map)->stack_b->lst->next)
 		return ;
 	if ((*map)->stack_b->size == 1)
 		return ;
@@ -72,11 +73,13 @@ void ft_ra(t_map **map)
 
 	if (!(*map)->stack_a->lst)
 		return ;
-	if (!(*map)->stack_a->lst->value
-		|| !(*map)->stack_a->lst->next)
+	// if (!(*map)->stack_a->lst->value
+		// || !(*map)->stack_a->lst->next)
+	if (!(*map)->stack_a->lst->next)
 		return ;
 	if ((*map)->stack_a->size == 1)
 		return ;
+	printf("********\n");
 	first = (*map)->stack_a->lst;
 	(*map)->stack_a->lst = first->next;
 	new = ft_dlstnew((first)->value);
@@ -84,4 +87,26 @@ void ft_ra(t_map **map)
 	ft_dlstdelone(first);
 	ft_dlstiter((*map)->stack_a->lst, &ft_decr_idx);
 	ft_dlstadd_back(&(*map)->stack_a->lst, new);
+}
+
+void ft_ra_x(t_map **map, int i)
+{
+	printf("rotate %d times\n", i);
+	while (i > 0)
+	{
+		ft_ra(map);
+		write(1, "ra\n", 3);
+		i--;
+	}
+	ft_dlstiter((*map)->stack_a->lst, &ft_print_lst);
+}
+
+void ft_rb_x(t_map **map, int i)
+{
+	printf("rotate %d times\n", i);
+	while (i > 0)
+	{
+		ft_rb(map);
+		i--;
+	}
 }

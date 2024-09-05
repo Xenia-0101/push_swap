@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 13:25:57 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/02 22:34:28 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/05 09:33:21 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,32 @@ size_t	ft_get_num_count(char **in)
 		count++;
 	}
 	return (count);
+}
+
+int ft_max(int a, int b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}
+
+int ft_min_tab(int *tab, int s)
+{
+	int i;
+	int ti;
+	int v;
+
+	i = 0;
+	ti = i;
+	v = tab[0];
+	while (i < s)
+	{
+		if (tab[i] < v)
+		{
+			v = tab[i];
+			ti = i;
+		}
+		i++;
+	}
+	return (ti);
 }
