@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 10:07:00 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/04 12:52:50 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/07 11:47:53 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,31 @@ size_t	ft_dlstiter_v_2(t_dlist *lst, int v, int *tv)
 		ft_dlstiter_v_2(lst->next, v, tv);
 }
 
+size_t	ft_dlstiter_v_2_max(t_dlist *lst, int v, int *tv)
+{
+	if (!lst)
+		return (-1);
+	if (lst->value < v && lst->value > *tv)
+	{
+		*tv = lst->value;
+		return (lst->index);
+	}
+	if (lst->next)
+		ft_dlstiter_v_2_max(lst->next, v, tv);
+}
+
+void	ft_dlstiter_2_max(t_dlist *lst, int v, int *tv)
+{
+	if (!lst)
+		return ;
+	if (lst->value > v && lst->value > *tv)
+	{
+		*tv = lst->value;
+	}
+	if (lst->next)
+		ft_dlstiter_2_max(lst->next, v, tv);
+}
+
 size_t	ft_dlstiter_v_3(t_dlist *lst, int v, int *tv)
 {
 	if (!lst)
@@ -74,6 +99,32 @@ size_t	ft_dlstiter_v_3(t_dlist *lst, int v, int *tv)
 	}
 	if (lst->next)
 		ft_dlstiter_v_3(lst->next, v, tv);
+}
+
+size_t	ft_dlstiter_v_3_min(t_dlist *lst, int v, int *tv)
+{
+	if (!lst)
+		return (-1);
+	if (lst->value < v && lst->value < *tv)
+	{
+		*tv = lst->value;
+		return (lst->index);
+	}
+	if (lst->next)
+		ft_dlstiter_v_3_min(lst->next, v, tv);
+}
+
+
+void	ft_dlstiter_3_min(t_dlist *lst, int v, int *tv)
+{
+	if (!lst)
+		return ;
+	if (lst->value < v && lst->value < *tv)
+	{
+		*tv = lst->value;
+	}
+	if (lst->next)
+		ft_dlstiter_3_min(lst->next, v, tv);
 }
 
 size_t	ft_dlstiter_v_4(t_dlist *lst, int v)

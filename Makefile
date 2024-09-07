@@ -29,6 +29,7 @@ SRC := \
 		src/ft_parse_args.c \
 		src/ft_sort_reverse.c \
 		src/ft_sort.c \
+		src/ft_pun.c \
 		${LSTS}ft_actadd_back.c \
 		${LSTS}ft_actadd_front.c \
 		${LSTS}ft_actclear.c \

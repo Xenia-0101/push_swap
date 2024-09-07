@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 11:42:27 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/05 12:16:29 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/07 11:50:38 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ void ft_ra(t_map **map)
 		return ;
 	if ((*map)->stack_a->size == 1)
 		return ;
-	printf("********\n");
 	first = (*map)->stack_a->lst;
 	(*map)->stack_a->lst = first->next;
 	new = ft_dlstnew((first)->value);
@@ -91,22 +90,20 @@ void ft_ra(t_map **map)
 
 void ft_ra_x(t_map **map, int i)
 {
-	printf("rotate %d times\n", i);
 	while (i > 0)
 	{
 		ft_ra(map);
 		write(1, "ra\n", 3);
 		i--;
 	}
-	ft_dlstiter((*map)->stack_a->lst, &ft_print_lst);
 }
 
 void ft_rb_x(t_map **map, int i)
 {
-	printf("rotate %d times\n", i);
 	while (i > 0)
 	{
 		ft_rb(map);
+		write(1, "rb\n", 3);
 		i--;
 	}
 }

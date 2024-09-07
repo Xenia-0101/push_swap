@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:29:53 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/05 12:31:35 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/07 11:47:30 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ static void ft_check_limits(t_stack **s1, t_stack **s2)
 {
 	int temp;
 	// check limits in the list we are pushing into
-	printf("max a: %d\tmin a: %d\t val: %d\n", (*s2)->max, (*s2)->min, (*s1)->lst->value);
 	if ((*s2)->max < (*s1)->lst->value)
 		(*s2)->max = (*s1)->lst->value;
 	if ((*s2)->min > (*s1)->lst->value)
@@ -35,18 +34,21 @@ static void ft_check_limits(t_stack **s1, t_stack **s2)
 	if (((*s1)->max == (*s1)->lst->value)
 		&& (*s1)->lst->next)
 	{
-		temp = (*s1)->max;
 		(*s1)->max = (*s1)->lst->next->value;
-		ft_dlstiter_v_2((*s1)->lst, temp, &(*s1)->max);
+		temp = (*s1)->min;
+		ft_dlstiter_2_max((*s1)->lst->next, temp, &(*s1)->max);
 	}
+	// if we are removing current minimum
+	// if it's not a list of size 1
 	if (((*s1)->min == (*s1)->lst->value)
 		&& (*s1)->lst->next)
 	{
-		temp = (*s1)->min;
+		// set minimum as the next value - constant
 		(*s1)->min = (*s1)->lst->next->value;
-		ft_dlstiter_v_3((*s1)->lst, temp, &(*s1)->min);
+		// store this value for comparition - variable
+		temp = (*s1)->min;
+		ft_dlstiter_3_min((*s1)->lst->next, temp, &(*s1)->min);
 	}
-	printf("max a: %d\tmin a: %d\t val: %d\n", (*s2)->max, (*s2)->min, (*s1)->lst->value);
 }
 
 /**

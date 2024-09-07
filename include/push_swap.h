@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:16:23 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/05 11:27:48 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/07 11:38:33 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,11 @@ void	ft_dlstiter(t_dlist *lst, void (*f)(t_dlist *));
 void	ft_dlstiter_i(t_dlist *lst, size_t i, void (*f)(t_dlist *));
 size_t	ft_dlstiter_v(t_dlist *lst, int v);
 size_t	ft_dlstiter_v_2(t_dlist *lst, int v, int *tv);
+size_t	ft_dlstiter_v_2_max(t_dlist *lst, int v, int *tv);
+void	ft_dlstiter_2_max(t_dlist *lst, int v, int *tv);
 size_t	ft_dlstiter_v_3(t_dlist *lst, int v, int *tv);
+size_t	ft_dlstiter_v_3_min(t_dlist *lst, int v, int *tv);
+void	ft_dlstiter_3_min(t_dlist *lst, int v, int *tv);
 size_t	ft_dlstiter_v_4(t_dlist *lst, int v);
 t_dlist	*ft_dlstlast(t_dlist *lst);
 size_t	ft_dlstsize(t_dlist *lst);
@@ -139,6 +143,13 @@ void	ft_sort_reverse(t_map **map);
 /* ft_sort */
 void	ft_sort(t_map **map);
 void	ft_sort_3(t_map **map);
+
+/* pun */
+void ft_calc_pun(t_map **map, t_pun *pun, int ia, int ib);
+int ft_calc_act(t_stack *st_a, t_stack *st_b, int ia, int ib);
+void ft_do_act(t_map **map, t_pun *pun, int r);
+void ft_redo_act(t_map **map, t_pun *pun, int r);
+
 
 /* actions */
 void	ft_pa(t_map **map);
