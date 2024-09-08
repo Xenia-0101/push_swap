@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 10:26:09 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/01 10:41:39 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/07 20:33:11 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,17 @@
 
 void	ft_dlstdelone(t_dlist *lst)
 {
-	if (lst->acts)
-		ft_actclear(&(lst->acts));
+	int i;
+
+	lst->ipo = 0;
+	lst->cost = 0;
+	lst->conf = 0;
+	i = 0;
+	while (i < 4)
+	{
+		lst->pun[i] = 0;
+		i++;
+	}
 	lst->index = 0;
 	lst->value = 0;
 	free(lst);

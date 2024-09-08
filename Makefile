@@ -30,15 +30,6 @@ SRC := \
 		src/ft_sort_reverse.c \
 		src/ft_sort.c \
 		src/ft_pun.c \
-		${LSTS}ft_actadd_back.c \
-		${LSTS}ft_actadd_front.c \
-		${LSTS}ft_actclear.c \
-		${LSTS}ft_actdelone.c \
-		${LSTS}ft_actiter.c \
-		${LSTS}ft_actlast.c \
-		${LSTS}ft_actnew.c \
-		${LSTS}ft_actsize.c \
-		${LSTS}ft_test_act.c \
 		${LSTS}ft_dlstadd_back.c \
 		${LSTS}ft_dlstadd_front.c \
 		${LSTS}ft_dlstclear.c \
@@ -48,6 +39,15 @@ SRC := \
 		${LSTS}ft_dlstnew.c \
 		${LSTS}ft_dlstsize.c \
 		${UTLS}ft_atoi_check.c \
+		# ${LSTS}ft_actadd_back.c \
+		# ${LSTS}ft_actadd_front.c \
+		# ${LSTS}ft_actclear.c \
+		# ${LSTS}ft_actdelone.c \
+		# ${LSTS}ft_actiter.c \
+		# ${LSTS}ft_actlast.c \
+		# ${LSTS}ft_actnew.c \
+		# ${LSTS}ft_actsize.c \
+		# ${LSTS}ft_test_act.c \
 
 
 

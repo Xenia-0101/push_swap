@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:16:23 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/07 11:38:33 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/08 10:28:14 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 
 // Pun square
 /**
- *
+ *				   ra    rra     rb    rrb
  *				|------+------+------+------|
  *		r[0] : 	|  ia  |   0  |  ib  |   0  |
  *				|------+------+------+------|
@@ -39,17 +39,13 @@
  *				|------+------+------+------|
  */
 
-typedef struct s_pun
-{
-	int		v[4][4];
-}	t_pun;
-
 // Action list structure
 typedef struct s_act
 {
-	struct s_act	*next;
-	size_t			cost;
-	int				type;
+	int		ipo;		// idx of elem above which num should be pushed
+	int		cost;		// count of total movements to get desired elements on top
+	int		conf;		// the configuration to get the elements on top (vals 1 - 4)
+	int		pun[4];		// the steps to be taken to get elements on top
 }	t_act;
 
 // Double linked list structure
@@ -57,7 +53,10 @@ typedef struct s_dlist
 {
 	struct s_dlist	*prev;
 	struct s_dlist	*next;
-	t_act			*acts;
+	int				ipo;		// idx of elem above which num should be pushed
+	int				cost;		// count of total movements to get desired elements on top
+	int				conf;		// the configuration to get the elements on top (vals 1 - 4)
+	int				pun[4];		// the steps to be taken to get elements on top
 	size_t			index;
 	int				value;
 }	t_dlist;
@@ -109,7 +108,8 @@ size_t	ft_dlstiter_v_2(t_dlist *lst, int v, int *tv);
 size_t	ft_dlstiter_v_2_max(t_dlist *lst, int v, int *tv);
 void	ft_dlstiter_2_max(t_dlist *lst, int v, int *tv);
 size_t	ft_dlstiter_v_3(t_dlist *lst, int v, int *tv);
-size_t	ft_dlstiter_v_3_min(t_dlist *lst, int v, int *tv);
+void	ft_dlstiter_high_low(t_dlist *lst, int v, int *tv, int *ti);
+void	ft_dlstiter_low_high(t_dlist *lst, int v, int *tv, int *ti);
 void	ft_dlstiter_3_min(t_dlist *lst, int v, int *tv);
 size_t	ft_dlstiter_v_4(t_dlist *lst, int v);
 t_dlist	*ft_dlstlast(t_dlist *lst);
@@ -145,10 +145,14 @@ void	ft_sort(t_map **map);
 void	ft_sort_3(t_map **map);
 
 /* pun */
-void ft_calc_pun(t_map **map, t_pun *pun, int ia, int ib);
-int ft_calc_act(t_stack *st_a, t_stack *st_b, int ia, int ib);
-void ft_do_act(t_map **map, t_pun *pun, int r);
-void ft_redo_act(t_map **map, t_pun *pun, int r);
+int ft_calc_act_big(t_map **map, t_dlist **lst, int ia, int ib);
+void ft_calc_pun_big(t_map **map, t_dlist **lst, int ia, int ib);
+void ft_print_pun(int i[4]);
+void ft_do_act_big(t_map **map, int pun[4]);
+// void ft_calc_pun(t_map **map, t_pun *pun, int ia, int ib);
+// int ft_calc_act(t_stack *st_a, t_stack *st_b, int ia, int ib);
+// void ft_do_act(t_map **map, t_pun *pun, int r);
+// void ft_redo_act(t_map **map, t_pun *pun, int r);
 
 
 /* actions */

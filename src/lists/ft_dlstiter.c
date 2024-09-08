@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 10:07:00 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/07 11:47:53 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/08 10:59:28 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,17 +101,36 @@ size_t	ft_dlstiter_v_3(t_dlist *lst, int v, int *tv)
 		ft_dlstiter_v_3(lst->next, v, tv);
 }
 
-size_t	ft_dlstiter_v_3_min(t_dlist *lst, int v, int *tv)
+// get highest number that is lower than v and
+// set the value and index to tv and ti
+// used in sort big --> push to b
+void	ft_dlstiter_high_low(t_dlist *lst, int v, int *tv, int *ti)
 {
 	if (!lst)
-		return (-1);
-	if (lst->value < v && lst->value < *tv)
+		return ;
+	if (lst->value < v && lst->value >= *tv)
 	{
 		*tv = lst->value;
-		return (lst->index);
+		*ti = lst->index;
 	}
 	if (lst->next)
-		ft_dlstiter_v_3_min(lst->next, v, tv);
+		ft_dlstiter_high_low(lst->next, v, tv, ti);
+}
+
+// get lowest number that is higher than v
+// set the value and index to tv and ti
+// used in sort big --> push to a
+void	ft_dlstiter_low_high(t_dlist *lst, int v, int *tv, int *ti)
+{
+	if (!lst)
+		return ;
+	if (lst->value > v && lst->value <= *tv)
+	{
+		*tv = lst->value;
+		*ti = lst->index;
+	}
+	if (lst->next)
+		ft_dlstiter_low_high(lst->next, v, tv, ti);
 }
 
 
