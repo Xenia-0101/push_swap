@@ -6,13 +6,13 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 23:35:27 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/02 07:06:53 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/08 16:53:46 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int ft_check_size(t_map *map)
+static int	ft_check_size(t_map *map)
 {
 	if (map->size == 1)
 		map->state = 1;
@@ -40,7 +40,5 @@ int	ft_is_sorted(t_map *map)
 		curr = curr->next;
 	}
 	map->state = is_asc + is_des;
-
-
 	return (map->state);
 }

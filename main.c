@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:15:36 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/05 11:51:46 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/08 11:54:22 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void ft_clean_exit(t_map **map)
 {
-	printf("Clean exit\n");
+	// printf("Clean exit\n");
 	ft_free_map(map);
 	exit (0);
 }
@@ -31,7 +31,8 @@ int main(int argc, char **argv)
 	// check if nums are unique
 	if (!ft_is_unique(&stack_a))
 	{
-		write(2, "\033[0;31mERROR: Numbers are not unique.\033[0m\n", 42);
+		// write(2, "\033[0;31mERROR: Numbers are not unique.\033[0m\n", 42);
+		write(2, "Error\n", 6);
 		ft_free_stack(&stack_a);
 		exit(1);
 	}
@@ -43,7 +44,7 @@ int main(int argc, char **argv)
 	// check if list is sorted
 	if (!map->state)
 	{
-		printf("max a: %d\t min a: %d\tsize a: %ld\n", (map)->stack_a->max, (map)->stack_a->min, (map)->stack_a->size);
+		// printf("max a: %d\t min a: %d\tsize a: %ld\n", (map)->stack_a->max, (map)->stack_a->min, (map)->stack_a->size);
 		ft_sort(&map);	// SORT;
 	}
 	if (map->state == 2)

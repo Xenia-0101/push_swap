@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 11:42:27 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/07 11:50:38 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/08 16:42:07 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,33 +26,13 @@ void ft_decr_idx(t_dlist *lst)
  *
  * @param lst A pointer to the pointer of the list to be rotated.
  */
-void ft_rotate(t_list **lst)
-{
-	t_list *first;
-	t_list *tmp;
-
-	if (!*lst)
-		return ;
-	if (!(*lst)->content || !(*lst)->next)
-		return ;
-	first = ft_lstnew((*lst)->content->value);
-	tmp = *lst;
-	*lst = (*lst)->next;
-	(*lst)->prev = NULL;
-	ft_lstdelone(tmp, &ft_del_cont);
-	ft_lstadd_back(lst, first);
-	return ;
-}
-
-void ft_rb(t_map **map)
+void	ft_rb(t_map **map)
 {
 	t_dlist *new;
 	t_dlist *first;
 
 	if (!(*map)->stack_b->lst)
 		return ;
-	// if (!(*map)->stack_b->lst->value
-	// 	|| !(*map)->stack_b->lst->next)
 	if (!(*map)->stack_b->lst->next)
 		return ;
 	if ((*map)->stack_b->size == 1)
@@ -64,17 +44,16 @@ void ft_rb(t_map **map)
 	ft_dlstdelone(first);
 	ft_dlstiter((*map)->stack_b->lst, &ft_decr_idx);
 	ft_dlstadd_back(&(*map)->stack_b->lst, new);
+	write(1, "rb ", 3);
 }
 
-void ft_ra(t_map **map)
+void	ft_ra(t_map **map)
 {
 	t_dlist *new;
 	t_dlist *first;
 
 	if (!(*map)->stack_a->lst)
 		return ;
-	// if (!(*map)->stack_a->lst->value
-		// || !(*map)->stack_a->lst->next)
 	if (!(*map)->stack_a->lst->next)
 		return ;
 	if ((*map)->stack_a->size == 1)
@@ -86,24 +65,23 @@ void ft_ra(t_map **map)
 	ft_dlstdelone(first);
 	ft_dlstiter((*map)->stack_a->lst, &ft_decr_idx);
 	ft_dlstadd_back(&(*map)->stack_a->lst, new);
+	write(1, "ra ", 3);
 }
 
-void ft_ra_x(t_map **map, int i)
+void	ft_ra_x(t_map **map, int i)
 {
 	while (i > 0)
 	{
 		ft_ra(map);
-		write(1, "ra\n", 3);
 		i--;
 	}
 }
 
-void ft_rb_x(t_map **map, int i)
+void	ft_rb_x(t_map **map, int i)
 {
 	while (i > 0)
 	{
 		ft_rb(map);
-		write(1, "rb\n", 3);
 		i--;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 14:45:40 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/04 08:50:51 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/08 16:55:24 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	ft_parse_long(t_stack **st, char *arg)
 
 	if (!arg || !*arg)
 	{
-		write(2, "\033[0;31mERROR: empty argument.\033[0m\n", 34);
+		write(2, "Error\n", 6);
 		ft_free_stack(st);
 		exit(1);
 	}
@@ -69,7 +69,7 @@ void	ft_parse_args(t_stack **stack, int argc, char **argv)
 {
 	if (argc == 1)
 	{
-		write(2, "\033[0;31mERROR: No argument provided.\033[0m\n", 40);		// TODO: return prompt
+		write(2, "Error\n", 6);
 		ft_free_stack(stack);
 		exit(1) ;
 	}
@@ -82,6 +82,5 @@ void	ft_parse_args(t_stack **stack, int argc, char **argv)
 		ft_parse_many(stack, argc, argv);
 	}
 	(*stack)->cheap = (*stack)->size;
-	// printf("Stack values: %d, %ld, %d\n", (*stack)->max, (*stack)->size, (*stack)->lst->value);
 }
 

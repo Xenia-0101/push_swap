@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:16:23 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/08 10:28:14 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/08 16:58:40 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,34 +86,18 @@ typedef struct s_map
 
 /* *** Prototypes *** */
 
-/* TO DELETE */
-void ft_test_act(void);
 /* lists - basic functions */
-t_act	*ft_actnew(size_t cost, int type);
-void	ft_actadd_back(t_act **act, t_act *new);
-void	ft_actadd_front(t_act **act, t_act *new);
-void	ft_actiter(t_act *act, void (*f)(int c, int t));
-t_act	*ft_actlast(t_act *act);
-size_t	ft_actsize(t_act *act);
-void	ft_actdelone(t_act *act);
-void	ft_actclear(t_act **act);
-
 t_dlist	*ft_dlstnew(int val);
 void	ft_dlstadd_back(t_dlist **lst, t_dlist *new);
 void	ft_dlstadd_front(t_dlist **lst, t_dlist *new);
 void	ft_dlstiter(t_dlist *lst, void (*f)(t_dlist *));
-void	ft_dlstiter_i(t_dlist *lst, size_t i, void (*f)(t_dlist *));
-size_t	ft_dlstiter_v(t_dlist *lst, int v);
-size_t	ft_dlstiter_v_2(t_dlist *lst, int v, int *tv);
-size_t	ft_dlstiter_v_2_max(t_dlist *lst, int v, int *tv);
-void	ft_dlstiter_2_max(t_dlist *lst, int v, int *tv);
-size_t	ft_dlstiter_v_3(t_dlist *lst, int v, int *tv);
-void	ft_dlstiter_high_low(t_dlist *lst, int v, int *tv, int *ti);
-void	ft_dlstiter_low_high(t_dlist *lst, int v, int *tv, int *ti);
-void	ft_dlstiter_3_min(t_dlist *lst, int v, int *tv);
-size_t	ft_dlstiter_v_4(t_dlist *lst, int v);
+size_t	ft_dlstiter_v(t_dlist *lst, int v);								// ft_sort.c: ft_sort_3
+void	ft_dlstiter_2_max(t_dlist *lst, int v, int *tv);				// ft_push.c: ft_check_limits
+void	ft_dlstiter_high_low(t_dlist *lst, int v, int *tv, int *ti);	// ft_sort.c: ft_sort_big
+void	ft_dlstiter_low_high(t_dlist *lst, int v, int *tv, int *ti);	// ft_sort.c: ft_sort_big
+void	ft_dlstiter_3_min(t_dlist *lst, int v, int *tv);				// ft_push.c: ft_check_limits
+size_t	ft_dlstiter_v_4(t_dlist *lst, int v);							// ft_sort.c: ft_sort_4
 t_dlist	*ft_dlstlast(t_dlist *lst);
-size_t	ft_dlstsize(t_dlist *lst);
 void	ft_dlstdelone(t_dlist *lst);
 void	ft_dlstclear(t_dlist **lst);
 
@@ -124,10 +108,12 @@ int		ft_atoi_check(t_stack **stack, const char *nptr);
 void	ft_free_split(char **str, int len);
 void	ft_free_stack(t_stack **stack);
 void	ft_free_map(t_map **map);
+
 /* ft_init */
 void	ft_init_stack_a(t_stack **stack);
 void	ft_init_map(t_map **map, t_stack *stack_a);
 void	ft_init_stack_b(t_map **map);
+
 /* ft_parse_args */
 void	ft_parse_args(t_stack **stack, int argc, char **argv);
 
@@ -144,16 +130,15 @@ void	ft_sort_reverse(t_map **map);
 void	ft_sort(t_map **map);
 void	ft_sort_3(t_map **map);
 
-/* pun */
-int ft_calc_act_big(t_map **map, t_dlist **lst, int ia, int ib);
-void ft_calc_pun_big(t_map **map, t_dlist **lst, int ia, int ib);
-void ft_print_pun(int i[4]);
-void ft_do_act_big(t_map **map, int pun[4]);
-// void ft_calc_pun(t_map **map, t_pun *pun, int ia, int ib);
-// int ft_calc_act(t_stack *st_a, t_stack *st_b, int ia, int ib);
-// void ft_do_act(t_map **map, t_pun *pun, int r);
-// void ft_redo_act(t_map **map, t_pun *pun, int r);
+/* ft_sort_mini */
+void	ft_sort_3(t_map **map);
+void	ft_sort_4(t_map **map);
+void	ft_sort_5(t_map **map);
 
+/* pun */
+int		ft_calc_act_big(t_map **map, t_dlist **lst, int ia, int ib);
+void	ft_calc_pun_big(t_map **map, t_dlist **lst, int ia, int ib);
+void	ft_do_act_big(t_map **map, int pun[4]);
 
 /* actions */
 void	ft_pa(t_map **map);
@@ -172,8 +157,8 @@ void	ft_sb(t_map **map);
 /* utils.c */
 void	ft_del_cont(t_cont *cont);
 size_t	ft_get_num_count(char **in);
-void ft_print_lst(t_dlist *lst);
-int ft_max(int a, int b);
-int ft_min_tab(int *tab, int s);
+void	ft_print_lst(t_dlist *lst);
+int		ft_max(int a, int b);
+int		ft_min_tab(int *tab, int s);
 
 #endif

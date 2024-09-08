@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_unique.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 21:16:55 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/02 09:39:26 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/08 11:31:43 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ static int	ft_unique_even(t_stack **stack, int *tab)
 		back = back->prev;
 	}
 	return (1);
-
 }
 
 int	ft_is_unique(t_stack **stack)

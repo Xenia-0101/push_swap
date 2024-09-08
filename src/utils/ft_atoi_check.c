@@ -20,16 +20,21 @@ static int	ft_isspace(int c);
  */
 int	ft_atoi_check(t_stack **stack, const char *nptr)
 {
+	// printf("%d %d %d\n", -2147483648, 2147483648, 2147483647 );
 	int	res;
 	int	sign;
 	int	i;
-
 	if (!nptr || !*nptr)
 	{
-		write(2, "\033[0;31mERROR: empty argument.\033[0m\n", 34);
+		write(2, "Error\n", 6);
 		ft_free_stack(stack);
 		exit(1);
 	}
+	if (!ft_strncmp(nptr, "-2147483648", 11))
+	{
+		return (-2147483648);
+	}
+
 	res = 0;
 	sign = 1;
 	i = 0;
@@ -37,11 +42,17 @@ int	ft_atoi_check(t_stack **stack, const char *nptr)
 	{
 		i++;
 	}
-	if (nptr[i] == '+' || nptr[i] == '-')
+	if (nptr[i] && (nptr[i] == '+' || nptr[i] == '-'))
 	{
 		if (nptr[i] == '-')
 			sign = -1;
 		i++;
+	}
+	if (!nptr[i] || !ft_isdigit(nptr[i]))
+	{
+		write(2, "Error\n", 6);
+		ft_free_stack(stack);
+		exit(1);
 	}
 	while (nptr[i] && ft_isdigit(nptr[i]))
 	{
@@ -50,7 +61,7 @@ int	ft_atoi_check(t_stack **stack, const char *nptr)
 	}
 	if (nptr[i])
 	{
-		write(2, "\033[0;31mERROR: Invalid format of arguments.\033[0m\n", 47);
+		write(2, "Error\n", 6);
 		ft_free_stack(stack);
 		exit(1);
 	}

@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:12:24 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/05 11:26:52 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/08 16:42:48 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,35 +21,21 @@
  *
  * @param lst A pointer to the pointer of the list to be rotated.
  */
-void ft_rrotate(t_list **lst)
-{
-	t_list *last;
-	t_list *tmp;
 
-	if (!*lst)
-		return ;
-	if (!(*lst)->content || !(*lst)->next)
-		return ;
-	tmp = ft_lstlast(*lst);
-	tmp->prev->next = NULL;
-	last = ft_lstnew(tmp->content->value);
-	ft_lstdelone(tmp, &ft_del_cont);
-	ft_lstadd_front(lst, last);
-}
-
-void ft_rrb(t_map **map)
+void	ft_rrb(t_map **map)
 {
-	t_dlist *new;
-	t_dlist *last;
+	t_dlist	*new;
+	t_dlist	*last;
 
 	last = ft_dlstlast((*map)->stack_b->lst);
 	new = ft_dlstnew((last)->value);
 	(last)->prev->next = NULL;
 	ft_dlstdelone(last);
 	ft_dlstadd_front(&(*map)->stack_b->lst, new);
+	write(1, "rrb ", 4);
 }
 
-void ft_rra(t_map **map)
+void	ft_rra(t_map **map)
 {
 	t_dlist *new;
 	t_dlist *last;
@@ -59,9 +45,10 @@ void ft_rra(t_map **map)
 	(last)->prev->next = NULL;
 	ft_dlstdelone(last);
 	ft_dlstadd_front(&(*map)->stack_a->lst, new);
+	write(1, "rra ", 4);
 }
 
-void ft_rra_x(t_map **map, int i)
+void	ft_rra_x(t_map **map, int i)
 {
 	while (i > 0)
 	{
@@ -70,7 +57,7 @@ void ft_rra_x(t_map **map, int i)
 	}
 }
 
-void ft_rrb_x(t_map **map, int i)
+void	ft_rrb_x(t_map **map, int i)
 {
 	while (i > 0)
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 14:48:51 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/02 09:41:23 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/08 16:53:20 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,9 @@ void	ft_free_map(t_map **map)
 		ft_free_stack(&(*map)->stack_a);
 	if ((*map)->stack_b)
 		ft_free_stack(&((*map)->stack_b));
-	// if ((*map)->acts)							// TODO
-	// 	ft_free_acts(((*map)->acts));
 	(*map)->size = 0;
 	(*map)->min = 0;
 	(*map)->max = 0;
 	(*map)->state = 0;
 	free(*map);
 }
-

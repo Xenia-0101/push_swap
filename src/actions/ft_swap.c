@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 19:02:30 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/07 20:31:32 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/08 16:43:24 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,11 @@
 /* sa (swap a): Swap the first 2 elements at the top of stack a.
 Do nothing if there is only one or no elements. */
 
-void ft_swap(t_list *lst)
+void	ft_sa(t_map **map)
 {
-	int temp;
-
-	if (!lst->content || !lst->next->content)
-		return ;
-	temp = lst->content->value;
-	lst->content->value = lst->next->content->value;
-	lst->next->content->value = temp;
-}
-
-void ft_sa(t_map **map)
-{
-	int val;
-	t_act **act;
-	t_dlist *temp;
+	int		val;
+	t_act	**act;
+	t_dlist	*temp;
 
 	if (!(*map)->stack_a->lst)
 		return ;
@@ -40,13 +29,14 @@ void ft_sa(t_map **map)
 	val = (*map)->stack_a->lst->value;
 	(*map)->stack_a->lst->value = temp->value;
 	temp->value = val;
+	write(1, "sa ", 3);
 }
 
-void ft_sb(t_map **map)
+void	ft_sb(t_map **map)
 {
-	int val;
-	t_act **act;
-	t_dlist *temp;
+	int		val;
+	t_act	**act;
+	t_dlist	*temp;
 
 	if (!(*map)->stack_b->lst)
 		return ;
@@ -56,5 +46,6 @@ void ft_sb(t_map **map)
 	val = (*map)->stack_b->lst->value;
 	(*map)->stack_b->lst->value = temp->value;
 	temp->value = val;
+	write(1, "sb ", 3);
 }
 

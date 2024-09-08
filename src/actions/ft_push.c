@@ -6,25 +6,21 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:29:53 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/07 11:47:30 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/08 16:41:13 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void ft_decr_idx(t_dlist *lst)
+static void	ft_decr_idx(t_dlist *lst)
 {
 	lst->index--;
 }
 
-void ft_reset_max(t_stack **stack, int *max)
-{
-
-}
 // from s1 to s2
-static void ft_check_limits(t_stack **s1, t_stack **s2)
+static void	ft_check_limits(t_stack **s1, t_stack **s2)
 {
-	int temp;
+	int	temp;
 	// check limits in the list we are pushing into
 	if ((*s2)->max < (*s1)->lst->value)
 		(*s2)->max = (*s1)->lst->value;
@@ -60,7 +56,7 @@ static void ft_check_limits(t_stack **s1, t_stack **s2)
  *
  * @param map
  */
-void ft_pb(t_map **map)
+void	ft_pb(t_map **map)
 {
 	t_dlist *new;
 	t_dlist *temp;
@@ -69,7 +65,6 @@ void ft_pb(t_map **map)
 
 	lst_a = &(*map)->stack_a->lst;
 	lst_b = &(*map)->stack_b->lst;
-	// if (!*lst_a || !(*lst_a)->value)
 	if (!*lst_a)
 		return ;
 	ft_check_limits(&(*map)->stack_a, &(*map)->stack_b);
@@ -83,9 +78,10 @@ void ft_pb(t_map **map)
 	(*map)->stack_a->size--;
 	(*map)->stack_b->size++;
 	ft_dlstiter((*lst_a), &ft_decr_idx);
+	write(1, "pb ", 3);
 }
 
-void ft_pa(t_map **map)
+void	ft_pa(t_map **map)
 {
 	t_dlist *new;
 	t_dlist *temp;
@@ -94,7 +90,6 @@ void ft_pa(t_map **map)
 
 	lst_a = &(*map)->stack_a->lst;
 	lst_b = &(*map)->stack_b->lst;
-	// if (!*lst_b || !(*lst_b)->value)
 	if (!*lst_b)
 		return ;
 	ft_check_limits(&(*map)->stack_b, &(*map)->stack_a);
@@ -108,4 +103,5 @@ void ft_pa(t_map **map)
 	(*map)->stack_a->size++;
 	(*map)->stack_b->size--;
 	ft_dlstiter((*lst_b), &ft_decr_idx);
+	write(1, "pa ", 3);
 }
