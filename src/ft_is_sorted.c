@@ -3,22 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_sorted.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 23:35:27 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/08 16:53:46 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/09 14:58:24 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static int	ft_check_size(t_map *map);
+int			ft_is_sorted(t_map *map);
+
+/**
+ * @brief 	Check the size of stack
+ * 			If the size of stack is 1, set map.state to 1
+ *
+ * @param map
+ * @return int map.state
+ */
 static int	ft_check_size(t_map *map)
 {
 	if (map->size == 1)
 		map->state = 1;
 	return (map->state);
 }
-
+/**
+ * @brief	Check if stack a is sorted
+ * 			Set appropriate map state:
+ * 				0 - unsorted stack
+ * 				1 - sorted stack
+ * 				2 - reverse sorted stack
+ *
+ * @param map
+ * @return int map.state
+ */
 int	ft_is_sorted(t_map *map)
 {
 	int		is_asc;

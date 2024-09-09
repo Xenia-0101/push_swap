@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:16:23 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/08 16:58:40 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/09 17:57:51 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@ void	ft_dlstiter_low_high(t_dlist *lst, int v, int *tv, int *ti);	// ft_sort.c: 
 void	ft_dlstiter_3_min(t_dlist *lst, int v, int *tv);				// ft_push.c: ft_check_limits
 size_t	ft_dlstiter_v_4(t_dlist *lst, int v);							// ft_sort.c: ft_sort_4
 t_dlist	*ft_dlstlast(t_dlist *lst);
+t_dlist	*ft_dlstat_i(t_dlist *lst, int i);
 void	ft_dlstdelone(t_dlist *lst);
 void	ft_dlstclear(t_dlist **lst);
 
@@ -105,7 +106,6 @@ void	ft_dlstclear(t_dlist **lst);
 int		ft_atoi_check(t_stack **stack, const char *nptr);
 
 /* ft_free */
-void	ft_free_split(char **str, int len);
 void	ft_free_stack(t_stack **stack);
 void	ft_free_map(t_map **map);
 
@@ -131,9 +131,10 @@ void	ft_sort(t_map **map);
 void	ft_sort_3(t_map **map);
 
 /* ft_sort_mini */
+void	ft_sort_2(t_map **map);
 void	ft_sort_3(t_map **map);
 void	ft_sort_4(t_map **map);
-void	ft_sort_5(t_map **map);
+// void	ft_sort_5(t_map **map);
 
 /* pun */
 int		ft_calc_act_big(t_map **map, t_dlist **lst, int ia, int ib);
@@ -160,5 +161,7 @@ size_t	ft_get_num_count(char **in);
 void	ft_print_lst(t_dlist *lst);
 int		ft_max(int a, int b);
 int		ft_min_tab(int *tab, int s);
+int		ft_isspace(int c);
+int		ft_just_space(char *str);
 
 #endif

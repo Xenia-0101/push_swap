@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_dlstiter.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 10:07:00 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/08 10:59:28 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/09 15:09:14 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ size_t	ft_dlstiter_v(t_dlist *lst, int v)
 	}
 	if (lst->next)
 		ft_dlstiter_v(lst->next, v);
+	return (-1) ;
 }
 /// @brief Iterate list and find next lower value
 /// @param lst
@@ -61,6 +62,7 @@ size_t	ft_dlstiter_v_2(t_dlist *lst, int v, int *tv)
 	}
 	if (lst->next)
 		ft_dlstiter_v_2(lst->next, v, tv);
+	return (-1) ;
 }
 
 size_t	ft_dlstiter_v_2_max(t_dlist *lst, int v, int *tv)
@@ -74,6 +76,7 @@ size_t	ft_dlstiter_v_2_max(t_dlist *lst, int v, int *tv)
 	}
 	if (lst->next)
 		ft_dlstiter_v_2_max(lst->next, v, tv);
+	return (-1) ;
 }
 
 void	ft_dlstiter_2_max(t_dlist *lst, int v, int *tv)
@@ -99,6 +102,7 @@ size_t	ft_dlstiter_v_3(t_dlist *lst, int v, int *tv)
 	}
 	if (lst->next)
 		ft_dlstiter_v_3(lst->next, v, tv);
+	return (-1) ;
 }
 
 // get highest number that is lower than v and
@@ -156,4 +160,5 @@ size_t	ft_dlstiter_v_4(t_dlist *lst, int v)
 	}
 	if (lst->next)
 		ft_dlstiter_v_4(lst->next, v);
+	return (-1) ;
 }

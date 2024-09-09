@@ -3,14 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 13:25:57 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/07 20:55:03 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/09 17:22:21 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+int	ft_isspace(int c)
+{
+	return ((c == '\f') | (c == '\n') | (c == '\r')
+		| (c == '\t') | (c == '\v') | (c == ' '));
+}
+
+int ft_just_space(char *str)
+{
+	int i;
+	int res;
+
+	res = 1;
+	i = 0;
+	while (str[i])
+	{
+		if (!ft_isspace(str[i]))
+			res = 0;
+		i++;
+	}
+	return (res);
+}
 
 void ft_print_lst(t_dlist *lst)
 {

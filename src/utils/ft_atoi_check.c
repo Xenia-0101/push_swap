@@ -12,9 +12,6 @@
 
 #include "push_swap.h"
 
-static int	ft_isspace(int c);
-
-
 /**
  * if there are chars after number is parsed, atoi exits program.
  */
@@ -66,10 +63,4 @@ int	ft_atoi_check(t_stack **stack, const char *nptr)
 		exit(1);
 	}
 	return (res * sign);
-}
-
-static int	ft_isspace(int c)
-{
-	return ((c == '\f') | (c == '\n') | (c == '\r')
-		| (c == '\t') | (c == '\v') | (c == ' '));
 }

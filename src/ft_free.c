@@ -3,16 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 14:48:51 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/08 16:53:20 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/09 14:59:07 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_free_split(char **str, int len)
+static void	ft_free_split(char **str, int len);
+void		ft_free_map(t_map **map);
+void		ft_free_stack(t_stack **stack);
+
+/**
+ * @brief If str does not exist, return
+ * 			Iterate str and free each *str
+ * 			Free str
+ *
+ * @param str	String pointer to be freed
+ * @param len	Number of strings in the pointer
+ */
+static void	ft_free_split(char **str, int len)
 {
 	int	i;
 
@@ -26,7 +38,14 @@ void	ft_free_split(char **str, int len)
 	}
 	free(str);
 }
-
+/**
+ * @brief 	Clear each node in dlist using ft_dlstclear function
+ * 			Free placeholder (stack.ph) using ft_free_split function
+ * 			Set all params to 0
+ * 			Free stack
+ *
+ * @param stack The stack to be freed
+ */
 void	ft_free_stack(t_stack **stack)
 {
 	ft_dlstclear(&(*stack)->lst);
@@ -37,7 +56,13 @@ void	ft_free_stack(t_stack **stack)
 	(*stack)->cheap = 0;
 	free(*stack);
 }
-
+/**
+ * @brief 	If stack a or stack b exist, free them using ft_free_stack function
+ *			Set all params to 0
+			Free map
+ *
+ * @param map
+ */
 void	ft_free_map(t_map **map)
 {
 	if ((*map)->stack_a)
