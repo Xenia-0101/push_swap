@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 19:02:30 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/08 16:43:24 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/10 20:28:51 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_sa(t_map **map)
 	val = (*map)->stack_a->lst->value;
 	(*map)->stack_a->lst->value = temp->value;
 	temp->value = val;
-	write(1, "sa ", 3);
+	write(1, "sa\n", 3);
 }
 
 void	ft_sb(t_map **map)
@@ -46,6 +46,6 @@ void	ft_sb(t_map **map)
 	val = (*map)->stack_b->lst->value;
 	(*map)->stack_b->lst->value = temp->value;
 	temp->value = val;
-	write(1, "sb ", 3);
+	write(1, "sb\n", 3);
 }
 

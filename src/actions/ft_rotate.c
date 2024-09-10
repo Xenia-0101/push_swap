@@ -6,7 +6,7 @@
 /*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 11:42:27 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/10 15:38:35 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/10 20:32:24 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void ft_decr_idx(t_dlist *lst)
  *
  * @param lst A pointer to the pointer of the list to be rotated.
  */
-void	ft_rb(t_map **map)
+void	ft_rb(t_map **map, int p)
 {
 	t_dlist *new;
 	t_dlist *first;
@@ -44,10 +44,11 @@ void	ft_rb(t_map **map)
 	ft_dlstdelone(first);
 	ft_dlstiter((*map)->stack_b->lst, &ft_decr_idx);
 	ft_dlstadd_back(&(*map)->stack_b->lst, new);
-	write(1, "rb ", 3);
+	if (p)
+		write(1, "rb\n", 3);
 }
 
-void	ft_ra(t_map **map)
+void	ft_ra(t_map **map, int p)
 {
 	t_dlist *new;
 	t_dlist *first;
@@ -65,23 +66,24 @@ void	ft_ra(t_map **map)
 	ft_dlstdelone(first);
 	ft_dlstiter((*map)->stack_a->lst, &ft_decr_idx);
 	ft_dlstadd_back(&(*map)->stack_a->lst, new);
-	write(1, "ra ", 3);
+	if (p)
+		write(1, "ra\n", 3);
 }
 
-void	ft_ra_x(t_map **map, int i)
+void	ft_ra_x(t_map **map, int i, int p)
 {
 	while (i > 0)
 	{
-		ft_ra(map);
+		ft_ra(map, p);
 		i--;
 	}
 }
 
-void	ft_rb_x(t_map **map, int i)
+void	ft_rb_x(t_map **map, int i, int p)
 {
 	while (i > 0)
 	{
-		ft_rb(map);
+		ft_rb(map, p);
 		i--;
 	}
 }

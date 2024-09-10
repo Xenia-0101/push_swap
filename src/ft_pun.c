@@ -6,7 +6,7 @@
 /*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 07:49:36 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/10 16:49:24 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/10 20:52:34 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,44 @@ void	ft_calc_pun_big(t_map **map, t_dlist **lst, int ia, int ib)
 		(*lst)->pun[3] = (*map)->stack_b->size - ib;
 	}
 }
+
+void	ft_write_rr(int ra_c, int rb_c, int rr_c)
+{
+	while (ra_c)
+	{
+		write(1, "ra\n", 3);
+		ra_c--;
+	}
+	while (rb_c)
+	{
+		write(1, "rb\n", 3);
+		rb_c--;
+	}
+	while (rr_c)
+	{
+		write(1, "rr\n", 3);
+		rr_c--;
+	}
+}
+
+void	ft_write_rrr(int ra_c, int rb_c, int rr_c)
+{
+	while (ra_c)
+	{
+		write(1, "rra\n", 4);
+		ra_c--;
+	}
+	while (rb_c)
+	{
+		write(1, "rrb\n", 4);
+		rb_c--;
+	}
+	while (rr_c)
+	{
+		write(1, "rrr\n", 4);
+		rr_c--;
+	}
+}
 /**
  * @brief Perform rotations based on pun values
  *
@@ -107,13 +145,57 @@ void	ft_calc_pun_big(t_map **map, t_dlist **lst, int ia, int ib)
 void	ft_do_act_big(t_map **map, int pun[4])
 {
 	int temp_p[4];
+	int ra_c;
+	int rb_c;
+	int rr_c;
 
 	temp_p[0] = pun[0];
 	temp_p[1] = pun[1];
 	temp_p[2] = pun[2];
 	temp_p[3] = pun[3];
-	ft_ra_x(map, temp_p[0]);
-	ft_rra_x(map, temp_p[1]);
-	ft_rb_x(map, temp_p[2]);
-	ft_rrb_x(map, temp_p[3]);
+
+	if (temp_p[0] && temp_p[2])	// if ra and rb
+	{
+		ft_ra_x(map, temp_p[0], 0);
+		ft_rb_x(map, temp_p[2], 0);
+		if (temp_p[0] > temp_p[2])
+		{
+			ra_c = temp_p[0] - temp_p[2];
+			rb_c = 0;
+			rr_c = temp_p[2];
+		}
+		else
+		{
+			ra_c = 0;
+			rb_c = temp_p[2] - temp_p[0];
+			rr_c = temp_p[0];
+		}
+		ft_write_rr(ra_c, rb_c, rr_c);
+
+	}
+	else if (temp_p[1] && temp_p[3]) // if rra and rrb
+	{
+		ft_rra_x(map, temp_p[1], 0);
+		ft_rrb_x(map, temp_p[3], 0);
+		if (temp_p[1] > temp_p[3])
+		{
+			ra_c = temp_p[1] - temp_p[3];
+			rb_c = 0;
+			rr_c = temp_p[3];
+		}
+		else
+		{
+			ra_c = 0;
+			rb_c = temp_p[3] - temp_p[1];
+			rr_c = temp_p[1];
+		}
+		ft_write_rrr(ra_c, rb_c, rr_c);
+	}
+	else
+	{
+		ft_ra_x(map, temp_p[0], 1);
+		ft_rra_x(map, temp_p[1], 1);
+		ft_rb_x(map, temp_p[2], 1);
+		ft_rrb_x(map, temp_p[3], 1);
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:16:23 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/10 18:00:55 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/10 20:34:21 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,14 +147,14 @@ void	ft_do_act_big(t_map **map, int pun[4]);
 /* actions */
 void	ft_pa(t_map **map);
 void	ft_pb(t_map **map);
-void	ft_ra(t_map **map);
-void	ft_rb(t_map **map);
-void	ft_ra_x(t_map **map, int i);
-void	ft_rb_x(t_map **map, int i);
-void	ft_rra(t_map **map);
-void	ft_rrb(t_map **map);
-void	ft_rra_x(t_map **map, int i);
-void	ft_rrb_x(t_map **map, int i);
+void	ft_ra(t_map **map, int p);
+void	ft_rb(t_map **map, int p);
+void	ft_ra_x(t_map **map, int i, int p);
+void	ft_rb_x(t_map **map, int i, int p);
+void	ft_rra(t_map **map, int p);
+void	ft_rrb(t_map **map, int p);
+void	ft_rra_x(t_map **map, int i, int p);
+void	ft_rrb_x(t_map **map, int i, int p);
 void	ft_sa(t_map **map);
 void	ft_sb(t_map **map);
 

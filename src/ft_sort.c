@@ -6,28 +6,10 @@
 /*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 22:44:48 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/10 19:11:05 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/10 20:36:06 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-15 1 44 18 3 5 7 22 0 -5 70
-
-Map state: 0
-pb pb pb rrb pb rrb pb pb pb rrb rrb rrb pb rra sa ra pa pa pa ra ra ra pa rra rra rra pa pa pa pa
-0	1
-1	3
-2	5
-3	7
-4	15
-5	18
-6	22
-7	44
-8	70
-9	-5
-10	0
-
- */
 #include "push_swap.h"
 
 void	ft_get_pos_b(t_stack *stack, int cv, int *pi, int *pv)
@@ -180,9 +162,9 @@ void ft_sort_big(t_map **map)
 	min_i = 0;
 	ft_dlstiter_v_1(stack_a->lst, stack_a->min, &min_i);
 	if (min_i < stack_a->size / 2)
-		ft_ra_x(map, min_i);
+		ft_ra_x(map, min_i, 1);
 	else
-		ft_ra_x(map, stack_a->size - min_i);
+		ft_rra_x(map, stack_a->size - min_i, 1);
 
 }
 
@@ -197,7 +179,6 @@ void ft_sort(t_map **map)
 		ft_sort_big(map);
 	else
 		ft_sort_big(map);
-	ft_dlstiter((*map)->stack_b->lst, &ft_print_lst);
 	ft_free_map(map);
 	exit(0);
 }

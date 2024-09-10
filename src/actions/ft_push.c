@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:29:53 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/08 16:41:13 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/10 20:29:00 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	ft_pb(t_map **map)
 	(*map)->stack_a->size--;
 	(*map)->stack_b->size++;
 	ft_dlstiter((*lst_a), &ft_decr_idx);
-	write(1, "pb ", 3);
+	write(1, "pb\n", 3);
 }
 
 void	ft_pa(t_map **map)
@@ -103,5 +103,5 @@ void	ft_pa(t_map **map)
 	(*map)->stack_a->size++;
 	(*map)->stack_b->size--;
 	ft_dlstiter((*lst_b), &ft_decr_idx);
-	write(1, "pa ", 3);
+	write(1, "pa\n", 3);
 }

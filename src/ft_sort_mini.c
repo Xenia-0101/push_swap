@@ -6,7 +6,7 @@
 /*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 16:56:46 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/09 18:20:49 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/10 20:37:10 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void		ft_sort_4(t_map **map);
  */
 void	ft_sort_2(t_map **map)
 {
-	ft_ra(map);
+	ft_ra(map, 1);
 }
 
 /**
@@ -46,12 +46,12 @@ void	ft_sort_3(t_map **map)
 	max_i = ft_dlstiter_v((*map)->stack_a->lst, (*map)->stack_a->max);
 	if (max_i == 0)
 	{
-		ft_ra(map);
+		ft_ra(map, 1);
 	}
 	if (max_i == 1)
 	{
+		ft_rra(map, 1);
 	}
-		ft_rra(map);
 	if (stack->min != stack->lst->value)
 	{
 		ft_sa(map);
@@ -80,16 +80,16 @@ static void	ft_sort_4_algo(t_map **map, int val_b)
 	}
 	else if (temp_i == 1)
 	{
-		ft_ra(map);
+		ft_ra(map, 1);
 		ft_pa(map);
-		ft_rra(map);
+		ft_rra(map, 1);
 	}
 	else
 	{
-		ft_rra(map);
+		ft_rra(map, 1);
 		ft_pa(map);
-		ft_rra(map);
-		ft_rra(map);
+		ft_rra(map, 1);
+		ft_rra(map, 1);
 	}
 }
 
@@ -118,7 +118,7 @@ void	ft_sort_4(t_map **map)
 	else if (val_b > (*map)->stack_a->max)
 	{
 		ft_pa(map);
-		ft_ra(map);
+		ft_ra(map, 1);
 	}
 	else
 	{

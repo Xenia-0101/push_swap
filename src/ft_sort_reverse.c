@@ -6,7 +6,7 @@
 /*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 08:42:46 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/09 18:26:08 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/10 20:35:42 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,17 @@ static void	ft_reverse_algo(t_map **map)
 	ft_init_stack_b(map);
 	ft_pb(map);
 	ft_pb(map);
-	ft_rb(map);
+	ft_rb(map, 1);
 	while ((*map)->stack_a->size > 3)
 	{
 		ft_pb(map);
 	}
-	ft_ra(map);
+	ft_ra(map, 1);
 	ft_sa(map);
 	while ((*map)->stack_b->size)
 	{
 		ft_pa(map);
-		ft_ra(map);
+		ft_ra(map, 1);
 	}
 }
 
