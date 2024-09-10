@@ -6,7 +6,7 @@
 /*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 22:44:48 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/10 19:05:31 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/10 19:11:05 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,27 +167,22 @@ void ft_back_to_a(t_map **map, t_stack *stack_a, t_stack *stack_b)
 
 void ft_sort_big(t_map **map)
 {
-	int curr_v;
-	int max_i;
-	int temp_v;
-	int cost;
-	int push_v;
-	int push_i;
-	t_dlist *temp;
+	int min_i;
 	t_stack *stack_a;
-	t_stack *stack_b;
-
-	ft_pb(map);
-	ft_pb(map);
-	ft_first_to_b(map, (*map)->stack_a, (*map)->stack_b);
-
 
 	stack_a = (*map)->stack_a;
-	stack_b = (*map)->stack_b;
-	temp = stack_a->lst;
-
+	ft_pb(map);
+	ft_pb(map);
+	ft_first_to_b(map, stack_a, (*map)->stack_b);
 	ft_sort_3(map);
-	ft_back_to_a(map, (*map)->stack_a, (*map)->stack_b);
+	ft_back_to_a(map, stack_a, (*map)->stack_b);
+
+	min_i = 0;
+	ft_dlstiter_v_1(stack_a->lst, stack_a->min, &min_i);
+	if (min_i < stack_a->size / 2)
+		ft_ra_x(map, min_i);
+	else
+		ft_ra_x(map, stack_a->size - min_i);
 
 }
 
@@ -202,9 +197,6 @@ void ft_sort(t_map **map)
 		ft_sort_big(map);
 	else
 		ft_sort_big(map);
-	printf("\n");
-	ft_dlstiter((*map)->stack_a->lst, &ft_print_lst);
-	printf("\n");
 	ft_dlstiter((*map)->stack_b->lst, &ft_print_lst);
 	ft_free_map(map);
 	exit(0);
