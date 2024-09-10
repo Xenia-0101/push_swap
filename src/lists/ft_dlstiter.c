@@ -6,7 +6,7 @@
 /*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 10:07:00 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/09 15:09:14 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/10 18:03:33 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,21 @@ size_t	ft_dlstiter_v(t_dlist *lst, int v)
 	}
 	if (lst->next)
 		ft_dlstiter_v(lst->next, v);
-	return (-1) ;
+	return (-1);
 }
+
+void	ft_dlstiter_v_1(t_dlist *lst, int v, int *i)
+{
+	if (!lst)
+		return ;
+	if (lst->value == v)
+	{
+		*i = lst->index;
+	}
+	if (lst->next)
+		ft_dlstiter_v_1(lst->next, v, i);
+}
+
 /// @brief Iterate list and find next lower value
 /// @param lst
 /// @param v	value to be pushed
@@ -161,4 +174,31 @@ size_t	ft_dlstiter_v_4(t_dlist *lst, int v)
 	if (lst->next)
 		ft_dlstiter_v_4(lst->next, v);
 	return (-1) ;
+}
+
+/**
+ * @brief Find node with the lowest cost
+ * 			Used in sort big
+ *
+ * @param lst
+ * @param c
+ * @param i
+ * @return void*
+ */
+void ft_dlstiter_cheap(t_dlist *lst, int *c, int pun[4])
+{
+	// printf("\n%d %d\n", lst->cost, lst->index);
+	if (!lst)
+		return ;
+	if (lst->cost < *c)
+	{
+		*c = lst->cost;
+		pun[0] = lst->pun[0];
+		pun[1] = lst->pun[1];
+		pun[2] = lst->pun[2];
+		pun[3] = lst->pun[3];
+	}
+	if (lst->next)
+		ft_dlstiter_cheap(lst->next, c, pun);
+
 }

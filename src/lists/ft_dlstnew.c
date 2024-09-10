@@ -12,17 +12,6 @@
 
 #include "push_swap.h"
 
-/*
-typedef struct s_dlist
-{
-	struct s_dlist	*prev;
-	struct s_dlist	*next;
-	t_act			*acts;
-	size_t			index;
-	int				value;
-}	t_dlist;
-*/
-
 t_dlist	*ft_dlstnew(int val)
 {
 	t_dlist	*lst;
@@ -42,9 +31,6 @@ t_dlist	*ft_dlstnew(int val)
 		lst->pun[i] = 0;
 		i++;
 	}
-	// lst->acts->conf = 0;
-	// lst->acts->cost = 0;
-	// lst->acts->ipo = 0;
 	lst->index = 0;
 	lst->value = val;
 	return (lst);

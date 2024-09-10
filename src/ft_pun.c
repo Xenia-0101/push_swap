@@ -6,7 +6,7 @@
 /*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 07:49:36 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/09 17:50:59 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:49:24 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,21 +72,29 @@ void	ft_calc_pun_big(t_map **map, t_dlist **lst, int ia, int ib)
 	if ((*lst)->conf == 0)
 	{
 		(*lst)->pun[0] = ia;
+		(*lst)->pun[1] = 0;
 		(*lst)->pun[2] = ib;
+		(*lst)->pun[3] = 0;
 	}
 	else if ((*lst)->conf == 1)
 	{
 		(*lst)->pun[0] = ia;
+		(*lst)->pun[1] = 0;
+		(*lst)->pun[2] = 0;
 		(*lst)->pun[3] = (*map)->stack_b->size - ib;
 	}
 	else if ((*lst)->conf == 2)
 	{
+		(*lst)->pun[0] = 0;
 		(*lst)->pun[1] = (*map)->stack_a->size - ia;
 		(*lst)->pun[2] = ib;
+		(*lst)->pun[3] = 0;
 	}
 	else if ((*lst)->conf == 3)
 	{
+		(*lst)->pun[0] = 0;
 		(*lst)->pun[1] = (*map)->stack_a->size - ia;
+		(*lst)->pun[2] = 0;
 		(*lst)->pun[3] = (*map)->stack_b->size - ib;
 	}
 }
@@ -98,8 +106,14 @@ void	ft_calc_pun_big(t_map **map, t_dlist **lst, int ia, int ib)
  */
 void	ft_do_act_big(t_map **map, int pun[4])
 {
-	ft_ra_x(map, pun[0]);
-	ft_rra_x(map, pun[1]);
-	ft_rb_x(map, pun[2]);
-	ft_rrb_x(map, pun[3]);
+	int temp_p[4];
+
+	temp_p[0] = pun[0];
+	temp_p[1] = pun[1];
+	temp_p[2] = pun[2];
+	temp_p[3] = pun[3];
+	ft_ra_x(map, temp_p[0]);
+	ft_rra_x(map, temp_p[1]);
+	ft_rb_x(map, temp_p[2]);
+	ft_rrb_x(map, temp_p[3]);
 }

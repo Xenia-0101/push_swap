@@ -6,7 +6,7 @@
 /*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:16:23 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/09 17:57:51 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/10 18:00:55 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ typedef struct s_stack
 	size_t	size;
 	size_t	cheap;
 	char	**ph;	// placeholder
+	int		ih[4];	// placeholder for pun
 	int		min;
 	int		max;
 }	t_stack;
@@ -92,11 +93,13 @@ void	ft_dlstadd_back(t_dlist **lst, t_dlist *new);
 void	ft_dlstadd_front(t_dlist **lst, t_dlist *new);
 void	ft_dlstiter(t_dlist *lst, void (*f)(t_dlist *));
 size_t	ft_dlstiter_v(t_dlist *lst, int v);								// ft_sort.c: ft_sort_3
+void	ft_dlstiter_v_1(t_dlist *lst, int v, int *i);
 void	ft_dlstiter_2_max(t_dlist *lst, int v, int *tv);				// ft_push.c: ft_check_limits
 void	ft_dlstiter_high_low(t_dlist *lst, int v, int *tv, int *ti);	// ft_sort.c: ft_sort_big
 void	ft_dlstiter_low_high(t_dlist *lst, int v, int *tv, int *ti);	// ft_sort.c: ft_sort_big
 void	ft_dlstiter_3_min(t_dlist *lst, int v, int *tv);				// ft_push.c: ft_check_limits
 size_t	ft_dlstiter_v_4(t_dlist *lst, int v);							// ft_sort.c: ft_sort_4
+void	ft_dlstiter_cheap(t_dlist *lst, int *c, int pun[4]);
 t_dlist	*ft_dlstlast(t_dlist *lst);
 t_dlist	*ft_dlstat_i(t_dlist *lst, int i);
 void	ft_dlstdelone(t_dlist *lst);
@@ -163,5 +166,6 @@ int		ft_max(int a, int b);
 int		ft_min_tab(int *tab, int s);
 int		ft_isspace(int c);
 int		ft_just_space(char *str);
+void	ft_print_acts(t_dlist *lst);
 
 #endif

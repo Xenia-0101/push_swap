@@ -6,7 +6,7 @@
 /*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 15:47:04 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/09 14:49:04 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:36:57 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ void	ft_init_stack_a(t_stack **stack)
 		return ;
 	(*stack)->lst = NULL;
 	(*stack)->ph = NULL;
+	(*stack)->ih[0] = 0;
+	(*stack)->ih[1] = 0;
+	(*stack)->ih[2] = 0;
+	(*stack)->ih[3] = 0;
 	(*stack)->size = 0;
 	(*stack)->min = 0;
 	(*stack)->max = 0;
