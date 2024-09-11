@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_mini.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 16:56:46 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/10 20:37:10 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/11 09:38:04 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,13 @@ void	ft_sort_2(t_map **map)
 void	ft_sort_3(t_map **map)
 {
 	t_stack	*stack;
-	size_t	max_i;
+	int	max_i;
 	int		max;
 
 	stack = (*map)->stack_a;
 	max = (*map)->stack_a->max;
-	max_i = ft_dlstiter_v((*map)->stack_a->lst, (*map)->stack_a->max);
+	max_i = 0;
+	ft_dlstiter_v_1((*map)->stack_a->lst, (*map)->stack_a->max, &max_i);
 	if (max_i == 0)
 	{
 		ft_ra(map, 1);
