@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:16:23 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/21 12:27:33 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/21 13:15:34 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@
 typedef struct s_act
 {
 	int		ipo;		// idx of elem above which num should be pushed
-	size_t	cost;		// count of total movements to get desired elements on top
+	int	cost;		// count of total movements to get desired elements on top
 	int		conf;		// the configuration to get the elements on top (vals 1 - 4)
 	int		pun[4];		// the steps to be taken to get elements on top
 }	t_act;
@@ -54,10 +54,10 @@ typedef struct s_dlist
 	struct s_dlist	*prev;
 	struct s_dlist	*next;
 	int				ipo;		// idx of elem above which num should be pushed
-	size_t			cost;		// count of total movements to get desired elements on top
+	int			cost;		// count of total movements to get desired elements on top
 	int				conf;		// the configuration to get the elements on top (vals 1 - 4)
 	int				pun[4];		// the steps to be taken to get elements on top
-	size_t			index;
+	int			index;
 	int				value;
 }	t_dlist;
 
@@ -65,8 +65,8 @@ typedef struct s_dlist
 typedef struct s_stack
 {
 	t_dlist	*lst;
-	size_t	size;
-	size_t	cheap;
+	int	size;
+	int	cheap;
 	char	**ph;	// placeholder
 	int		ih[4];	// placeholder for pun
 	int		min;
@@ -79,7 +79,7 @@ typedef struct s_map
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	t_act	*acts;
-	size_t	size;
+	int	size;
 	int		min;
 	int		max;
 	int		state; // to keep hold of sorted state
@@ -91,15 +91,16 @@ typedef struct s_map
 t_dlist	*ft_dlstnew(int val);
 void	ft_dlstadd_back(t_dlist **lst, t_dlist *new);
 void	ft_dlstadd_front(t_dlist **lst, t_dlist *new);
+
 void	ft_dlstiter(t_dlist *lst, void (*f)(t_dlist *));
-size_t	ft_dlstiter_v(t_dlist *lst, int v);								// ft_sort.c: ft_sort_3
+// int		ft_dlstiter_v(t_dlist *lst, int v);								// ft_sort.c: ft_sort_3
 void	ft_dlstiter_v_1(t_dlist *lst, int v, int *i);
 void	ft_dlstiter_2_max(t_dlist *lst, int v, int *tv);				// ft_push.c: ft_check_limits
 void	ft_dlstiter_high_low(t_dlist *lst, int v, int *tv, int *ti);	// ft_sort.c: ft_sort_big
 void	ft_dlstiter_low_high(t_dlist *lst, int v, int *tv, int *ti);	// ft_sort.c: ft_sort_big
 void	ft_dlstiter_3_min(t_dlist *lst, int v, int *tv);				// ft_push.c: ft_check_limits
-size_t	ft_dlstiter_v_4(t_dlist *lst, int v);							// ft_sort.c: ft_sort_4
-void	ft_dlstiter_cheap(t_dlist *lst, size_t *c, int pun[4]);
+int		ft_dlstiter_v_4(t_dlist *lst, int v);							// ft_sort.c: ft_sort_4
+void	ft_dlstiter_cheap(t_dlist *lst, int *c, int pun[4]);
 t_dlist	*ft_dlstlast(t_dlist *lst);
 t_dlist	*ft_dlstat_i(t_dlist *lst, int i);
 void	ft_dlstdelone(t_dlist *lst);
@@ -108,6 +109,7 @@ void	ft_dlstclear(t_dlist **lst);
 /* utils */
 int		ft_atoi_check(t_stack **stack, const char *nptr);
 void	ft_decr_idx(t_dlist *lst);
+void	ft_incr_index(t_dlist *lst);
 void	ft_check_limits(t_stack **s1, t_stack **s2);
 
 /* ft_free */
@@ -162,7 +164,7 @@ void	ft_sb(t_map **map);
 
 /* utils.c */
 void	ft_del_cont(t_cont *cont);
-size_t	ft_get_num_count(char **in);
+int	ft_get_num_count(char **in);
 void	ft_print_lst(t_dlist *lst);
 int		ft_max(int a, int b);
 int		ft_min_tab(int *tab, int s);

@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 13:25:57 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/21 12:00:52 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/21 12:29:22 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ void ft_del_cont(t_cont *cont)
 	free(cont);
 }
 
-size_t	ft_get_num_count(char **in)
+int	ft_get_num_count(char **in)
 {
-	size_t	count = 0;
+	int	count = 0;
 
 	while (in[count])
 	{

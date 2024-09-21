@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 22:44:48 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/21 12:24:43 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/21 12:29:22 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -204,7 +204,7 @@ void ft_back_to_a(t_map **map, t_stack *stack_a, t_stack *stack_b)
 
 void ft_sort_big(t_map **map)
 {
-	size_t min_i;
+	int min_i;
 	t_stack *stack_a;
 
 	stack_a = (*map)->stack_a;

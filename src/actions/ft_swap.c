@@ -6,14 +6,20 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 19:02:30 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/21 12:20:15 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/21 13:03:51 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-/* sa (swap a): Swap the first 2 elements at the top of stack a.
-Do nothing if there is only one or no elements. */
+void	ft_sa(t_map **map);
+void	ft_sb(t_map **map);
+
+/**
+ * @brief Swap first two values in a.
+ *
+ * @param map
+ */
 void	ft_sa(t_map **map)
 {
 	int		val;
@@ -30,6 +36,11 @@ void	ft_sa(t_map **map)
 	write(1, "sa\n", 3);
 }
 
+/**
+ * @brief Swap first two values in b.
+ *
+ * @param map
+ */
 void	ft_sb(t_map **map)
 {
 	int		val;

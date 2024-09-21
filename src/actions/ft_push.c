@@ -6,11 +6,14 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:29:53 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/21 12:17:19 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/21 12:35:25 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_pb(t_map **map);
+void	ft_pa(t_map **map);
 
 /**
  * @brief
@@ -46,6 +49,15 @@ void	ft_pb(t_map **map)
 	write(1, "pb\n", 3);
 }
 
+/**
+ * @brief
+ * Take the first element at the top of b and put it at the top of a.
+ * Do nothing if b is empty.
+ * Decrease size of b, increase size of a.
+ * Take care of indeces.
+ *
+ * @param map
+ */
 void	ft_pa(t_map **map)
 {
 	t_dlist	*new;

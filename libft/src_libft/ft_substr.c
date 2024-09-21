@@ -15,7 +15,7 @@ Function name
 	ft_substr
 
 Prot
-	char *ft_substr(char const *s, unsigned int start, size_t len);
+	char *ft_substr(char const *s, unsigned int start, int len);
 
 Parameters s:
 	The string from which to create the substring.
@@ -36,7 +36,7 @@ Description
 
 #include "../include/libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, int len)
 {
 	char	*sub;
 
@@ -46,8 +46,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_calloc(0, 0));
 	if (len == 0 || ft_strlen((char *)s) < (int)start + 1)
 		return (ft_calloc(0, 0));
-	if (len > (size_t)ft_strlen((char *)(s + start)))
-		len = (size_t)ft_strlen((char *)(s + start));
+	if (len > (int)ft_strlen((char *)(s + start)))
+		len = (int)ft_strlen((char *)(s + start));
 	sub = malloc(sizeof (char) * len + 1);
 	if (!sub)
 		return (NULL);

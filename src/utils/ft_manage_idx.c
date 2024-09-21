@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 12:11:28 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/21 12:12:11 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/21 13:04:58 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,14 @@ void	ft_decr_idx(t_dlist *lst)
 {
 	lst->index--;
 }
+
+void	ft_incr_index(t_dlist *lst)
+{
+	if (!lst)
+		return ;
+	lst->index++;
+}
+
 
 /**
  * @brief Check limits in stacks when pushing values.

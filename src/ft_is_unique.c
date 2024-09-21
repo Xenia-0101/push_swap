@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_unique.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 21:16:55 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/09 16:50:06 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/21 12:29:22 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static int	ft_compare_tab(int q, int r, int *tab, int len)
 static int	ft_check_odd(t_stack **stack, int *tab)
 {
 	t_dlist	*mid;
-	size_t	len;
+	int	len;
 
 	mid = ft_dlstat_i((*stack)->lst, (*stack)->size / 2);
 	len = (*stack)->size - 2;

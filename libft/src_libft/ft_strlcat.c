@@ -23,11 +23,11 @@ either check the arguments before the call, or test the function return value.
 
 #include "../include/libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+int	ft_strlcat(char *dest, const char *src, int size)
 {
-	size_t	d_len;
-	size_t	s_len;
-	size_t	to_copy;
+	int	d_len;
+	int	s_len;
+	int	to_copy;
 	int		i;
 
 	if ((src == NULL && size == 0)

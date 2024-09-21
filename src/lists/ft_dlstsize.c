@@ -6,16 +6,16 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 10:23:45 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/01 10:25:24 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/21 12:29:22 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-size_t	ft_dlstsize(t_dlist *lst)
+int	ft_dlstsize(t_dlist *lst)
 {
 	t_dlist	*temp;
-	size_t	i;
+	int	i;
 
 	i = 0;
 	if (!lst)

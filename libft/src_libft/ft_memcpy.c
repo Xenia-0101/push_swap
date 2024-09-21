@@ -32,11 +32,11 @@ https://www.imperialviolet.org/2016/06/26/nonnull.html
 
 #include "../include/libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, int n)
 {
 	char	*temp_d;
 	char	*temp_s;
-	size_t	i;
+	int	i;
 
 	temp_d = dest;
 	temp_s = (char *)src;

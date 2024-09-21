@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 16:56:46 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/21 12:25:24 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/21 12:29:22 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	ft_sort_3(t_map **map)
  */
 static void	ft_sort_4_algo(t_map **map, int val_b)
 {
-	size_t	temp_i;
+	int	temp_i;
 
 	temp_i = ft_dlstiter_v_4((*map)->stack_a->lst, val_b);
 	if (temp_i == 0)

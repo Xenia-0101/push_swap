@@ -1,11 +1,11 @@
 NAME = push_swap
-# CFLAGS =  -g
 CFLAGS = -Wall -Wextra -Werror -g
 
 RM = rm -rf
 CC = cc
 AR = ar rc
 
+SRCS = src/
 LSTS = src/lists/
 UTLS = src/utils/
 ACTS = src/actions/
@@ -21,16 +21,16 @@ SRC := \
 		${ACTS}ft_swap.c \
 		${ACTS}ft_rotate.c \
 		${ACTS}ft_rrotate.c \
-		src/utils.c \
-		src/ft_free.c \
-		src/ft_init.c \
-		src/ft_is_unique.c \
-		src/ft_is_sorted.c \
-		src/ft_parse_args.c \
-		src/ft_sort_reverse.c \
-		src/ft_sort.c \
-		src/ft_sort_mini.c \
-		src/ft_pun.c \
+		${SRCS}utils.c \
+		${SRCS}ft_free.c \
+		${SRCS}ft_init.c \
+		${SRCS}ft_is_unique.c \
+		${SRCS}ft_is_sorted.c \
+		${SRCS}ft_parse_args.c \
+		${SRCS}ft_sort_reverse.c \
+		${SRCS}ft_sort.c \
+		${SRCS}ft_sort_mini.c \
+		${SRCS}ft_pun.c \
 		${LSTS}ft_dlstadd_back.c \
 		${LSTS}ft_dlstadd_front.c \
 		${LSTS}ft_dlstclear.c \
@@ -41,17 +41,6 @@ SRC := \
 		${LSTS}ft_dlstsize.c \
 		${UTLS}ft_atoi_check.c \
 		${UTLS}ft_manage_idx.c \
-		# ${LSTS}ft_actadd_back.c \
-		# ${LSTS}ft_actadd_front.c \
-		# ${LSTS}ft_actclear.c \
-		# ${LSTS}ft_actdelone.c \
-		# ${LSTS}ft_actiter.c \
-		# ${LSTS}ft_actlast.c \
-		# ${LSTS}ft_actnew.c \
-		# ${LSTS}ft_actsize.c \
-		# ${LSTS}ft_test_act.c \
-
-
 
 OBJ = $(SRC:.c=.o)
 HEADER = -I ./include/
