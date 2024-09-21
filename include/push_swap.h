@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:16:23 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/21 21:13:25 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/21 21:38:46 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@
 typedef struct s_act
 {
 	int		ipo;		// idx of elem above which num should be pushed
-	int	cost;		// count of total movements to get desired elements on top
-	int		conf;		// the configuration to get the elements on top (vals 1 - 4)
-	int		pun[4];		// the steps to be taken to get elements on top
+	int		cost;		// count of total movements to get two nodes on top
+	int		conf;		// the conf to get two nodes on top (vals 1 - 4)
+	int		pun[4];		// the steps to be taken to get nodes on top
 }	t_act;
 
 // Double linked list structure
@@ -53,11 +53,11 @@ typedef struct s_dlist
 {
 	struct s_dlist	*prev;
 	struct s_dlist	*next;
-	int				ipo;		// idx of elem above which num should be pushed
-	int			cost;		// count of total movements to get desired elements on top
-	int				conf;		// the configuration to get the elements on top (vals 1 - 4)
-	int				pun[4];		// the steps to be taken to get elements on top
-	int			index;
+	int				ipo;		// idx above which a node should be pushed
+	int				cost;
+	int				conf;
+	int				pun[4];
+	int				index;
 	int				value;
 }	t_dlist;
 
@@ -65,8 +65,8 @@ typedef struct s_dlist
 typedef struct s_stack
 {
 	t_dlist	*lst;
-	int	size;
-	int	cheap;
+	int		size;
+	int		cheap;
 	char	**ph;	// placeholder
 	int		ih[4];	// placeholder for pun
 	int		min;
@@ -79,7 +79,7 @@ typedef struct s_map
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	t_act	*acts;
-	int	size;
+	int		size;
 	int		min;
 	int		max;
 	int		state; // to keep hold of sorted state

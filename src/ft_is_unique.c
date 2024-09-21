@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 21:16:55 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/21 12:29:22 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/21 21:57:54 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,15 @@ static int	ft_compare_tab(int q, int r, int *tab, int len)
 }
 
 /**
- * @brief Having stack with odd size, check if the value of the middle node is found in tab
+ * @brief	Having stack with odd size, check if the value
+ * 				of the middle node is found in tab
  * 			Get hold of the middle node
  * 			Get the size of the tab decreased by one
  * 			Check the middle.vale and middle.next.value are different
  * 			Check the middle.value and middle.next.value are not found in tab
  *
- * 			len = (*stack)->size - 2; The tab contains all but the middle elements (thus -1)
+ * 			len = (*stack)->size - 2;
+ * 			The tab contains all but the middle elements (thus -1)
  * 				and the last element is equal to middle.next.value (thus -2)
  *
  * @param stack
@@ -57,7 +59,7 @@ static int	ft_compare_tab(int q, int r, int *tab, int len)
 static int	ft_check_odd(t_stack **stack, int *tab)
 {
 	t_dlist	*mid;
-	int	len;
+	int		len;
 
 	mid = ft_dlstat_i((*stack)->lst, (*stack)->size / 2);
 	len = (*stack)->size - 2;
@@ -66,7 +68,6 @@ static int	ft_check_odd(t_stack **stack, int *tab)
 		return (0);
 	return (1);
 }
-
 
 /**
  * @brief	Check if numbers in stack are unique
@@ -95,7 +96,7 @@ static int	ft_check_unique(t_stack **stack, int *tab)
 		if (front->value == back->value)
 			return (0);
 		if (!ft_compare_tab(front->value, back->value, tab, i))
-			return (0) ;
+			return (0);
 		tab[i] = front->value;
 		tab[i + 1] = back->value;
 		front = front->next;

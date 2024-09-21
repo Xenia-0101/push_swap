@@ -6,21 +6,21 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:15:36 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/21 12:01:00 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/21 21:39:20 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/push_swap.h"
 
-void ft_clean_exit(t_map **map)
+void	ft_clean_exit(t_map **map)
 {
 	ft_free_map(map);
 	exit (0);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_stack *stack_a;
+	t_stack	*stack_a;
 	t_map	*map;
 
 	ft_init_stack_a(&stack_a);
@@ -42,4 +42,3 @@ int main(int argc, char **argv)
 	ft_free_map(&map);
 	return (0);
 }
-

@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 20:46:55 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/21 21:26:19 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/21 21:59:49 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ static void	ft_rra_rrb(t_map **map, int i, int j)
 		rr_c = i;
 	}
 	ft_write_rrr(ra_c, rb_c, rr_c);
-
 }
 
 /**
@@ -70,7 +69,6 @@ void	ft_pun_rotate(t_map **map, int pun[4])
 	if (pun[0] && pun[2])
 	{
 		ft_ra_rb(map, pun[0], pun[2]);
-
 	}
 	else if (pun[1] && pun[3])
 	{
@@ -84,4 +82,3 @@ void	ft_pun_rotate(t_map **map, int pun[4])
 		ft_rrb_x(map, pun[3], 1);
 	}
 }
-

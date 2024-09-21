@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 15:47:04 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/10 18:51:03 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/21 21:58:36 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	ft_init_stack_a(t_stack **stack)
 	(*stack)->max = 0;
 	(*stack)->cheap = 0;
 }
+
 /**
  * @brief Allocate memory for stack b
  * 			Set initial min and max values to the stack a first value
@@ -68,6 +69,7 @@ void	ft_init_stack_b(t_map **map)
 	(*stack)->max = (*map)->stack_a->lst->value;
 	(*stack)->cheap = 0;
 }
+
 /**
  * @brief Allocate memory for map
  * 			Set stack a parameter

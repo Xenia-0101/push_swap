@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 14:45:40 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/21 12:29:22 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/21 22:00:23 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ static void	ft_init_limits(t_stack **stack, int v)
 	(*stack)->min = v;
 	(*stack)->max = v;
 }
+
 /**
  * @brief Convert an argument into a list of arguments and create a stack
  * 			Check if the arg is valid
@@ -40,7 +41,7 @@ static void	ft_init_limits(t_stack **stack, int v)
 static void	ft_parse_long(t_stack **st, char *arg)
 {
 	t_dlist	*new;
-	int	i;
+	int		i;
 
 	if (!arg || !*arg || ft_just_space(arg))
 	{
@@ -63,6 +64,7 @@ static void	ft_parse_long(t_stack **st, char *arg)
 		i++;
 	}
 }
+
 /**
  * @brief Convert a list of arguments into a stack
  * 			Set stack.size to the argument count
@@ -96,6 +98,7 @@ static void	ft_parse_many(t_stack **stack, int argc, char **argv)
 		i++;
 	}
 }
+
 /**
  * @brief	Check number of arguments passed and call appropriate action
  * 			If argc is 1 - free and exit
@@ -112,9 +115,9 @@ void	ft_parse_args(t_stack **stack, int argc, char **argv)
 	{
 		write(2, "Error\n", 6);
 		ft_free_stack(stack);
-		exit(1) ;
+		exit(1);
 	}
-		if (argc == 2)
+	if (argc == 2)
 	{
 		ft_parse_long(stack, argv[1]);
 	}
@@ -124,4 +127,3 @@ void	ft_parse_args(t_stack **stack, int argc, char **argv)
 	}
 	(*stack)->cheap = (*stack)->size;
 }
-

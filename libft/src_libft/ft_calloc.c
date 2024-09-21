@@ -25,10 +25,10 @@
 
 #include "../include/libft.h"
 
-void	*ft_calloc(int elc, int els)
+void	*ft_calloc(size_t elc, size_t els)
 {
 	void	*ptr;
-	int	c;
+	size_t	c;
 
 	if (elc == 0 || els == 0)
 	{

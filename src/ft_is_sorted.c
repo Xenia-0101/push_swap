@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 23:35:27 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/21 12:20:37 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/21 21:54:28 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ static int	ft_check_size(t_map *map)
 		map->state = 1;
 	return (map->state);
 }
+
 /**
  * @brief	Check if stack a is sorted
  * 			Set appropriate map state:

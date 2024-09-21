@@ -29,11 +29,11 @@ RETURN VALUE
 
 #include "../include/libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, int n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned const char	*t2;
 	unsigned const char	*t1;
-	int				i;
+	size_t				i;
 
 	i = 0;
 	if (n != 0)

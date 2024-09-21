@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 07:49:36 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/21 21:26:55 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/21 21:54:14 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void		ft_calc_pun(t_map **map, t_dlist **lst, int ia, int ib);
  *
  * @param pun int[4] array
  */
-static void ft_reset_pun(int pun[4])
+static void	ft_reset_pun(int pun[4])
 {
 	pun[0] = 0;
 	pun[1] = 0;
@@ -56,7 +56,6 @@ int	ft_calc_conf(t_map **map, t_dlist **lst, int ia, int ib)
 
 	sa = (*map)->stack_a->size;
 	sb = (*map)->stack_b->size;
-
 	res[0] = ft_max(ia, ib);
 	res[1] = ia + sb - ib;
 	res[2] = sa - ia + ib;
@@ -65,6 +64,7 @@ int	ft_calc_conf(t_map **map, t_dlist **lst, int ia, int ib)
 	(*lst)->cost = res[(*lst)->conf];
 	return (ft_min_tab(res, 4));
 }
+
 /**
  * @brief Calculate lst.pun knowing the lst.conf,
  * 		size of lst in both stacks and the position of each node

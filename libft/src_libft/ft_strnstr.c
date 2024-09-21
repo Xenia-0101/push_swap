@@ -19,11 +19,11 @@
 
 #include "../include/libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, int n)
+char	*ft_strnstr(const char *big, const char *little, size_t n)
 {
-	int	len;
-	int	t_n;
-	int	counter;
+	size_t	len;
+	size_t	t_n;
+	size_t	counter;
 	int		i;
 
 	if (!*little)

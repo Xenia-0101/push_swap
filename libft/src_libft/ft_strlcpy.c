@@ -24,9 +24,9 @@
 
 #include "../include/libft.h"
 
-int	ft_strlcpy(char *dest, const char *src, int size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	int	s_len;
+	size_t	s_len;
 	int		i;
 
 	i = 0;

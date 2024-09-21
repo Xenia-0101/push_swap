@@ -30,9 +30,9 @@
 
 #include "../include/libft.h"
 
-// void	free_arr(char **res, int count)
+// void	free_arr(char **res, size_t count)
 // {
-// 	int	i;
+// 	size_t	i;
 
 // 	while (count-- > 0)
 // 	{

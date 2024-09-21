@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 14:48:51 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/09 14:59:07 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/21 21:58:10 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ static void	ft_free_split(char **str, int len)
 	}
 	free(str);
 }
+
 /**
  * @brief 	Clear each node in dlist using ft_dlstclear function
  * 			Free placeholder (stack.ph) using ft_free_split function
@@ -56,6 +57,7 @@ void	ft_free_stack(t_stack **stack)
 	(*stack)->cheap = 0;
 	free(*stack);
 }
+
 /**
  * @brief 	If stack a or stack b exist, free them using ft_free_stack function
  *			Set all params to 0
