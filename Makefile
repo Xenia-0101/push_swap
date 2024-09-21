@@ -35,12 +35,14 @@ SRC := \
 		${LSTS}ft_dlstadd_front.c \
 		${LSTS}ft_dlstclear.c \
 		${LSTS}ft_dlstdelone.c \
-		${LSTS}ft_dlstiter.c \
+		${LSTS}ft_dlstiter_1.c \
+		${LSTS}ft_dlstiter_2.c \
 		${LSTS}ft_dlstlast.c \
 		${LSTS}ft_dlstnew.c \
 		${LSTS}ft_dlstsize.c \
 		${UTLS}ft_atoi_check.c \
 		${UTLS}ft_manage_idx.c \
+		${UTLS}ft_write.c \
 
 OBJ = $(SRC:.c=.o)
 HEADER = -I ./include/

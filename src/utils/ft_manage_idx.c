@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 12:11:28 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/21 13:04:58 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/21 21:04:30 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	ft_check_limits(t_stack **s1, t_stack **s2)
 	{
 		(*s1)->max = (*s1)->lst->next->value;
 		temp = (*s1)->min;
-		ft_dlstiter_2_max((*s1)->lst->next, temp, &(*s1)->max);
+		ft_dlstiter_max((*s1)->lst->next, temp, &(*s1)->max);
 	}
 	// if we are removing current minimum
 	// if it's not a list of size 1
@@ -60,6 +60,6 @@ void	ft_check_limits(t_stack **s1, t_stack **s2)
 		(*s1)->min = (*s1)->lst->next->value;
 		// store this value for comparition - variable
 		temp = (*s1)->min;
-		ft_dlstiter_3_min((*s1)->lst->next, temp, &(*s1)->min);
+		ft_dlstiter_min((*s1)->lst->next, temp, &(*s1)->min);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:16:23 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/21 13:15:34 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/21 21:08:30 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,16 +91,15 @@ typedef struct s_map
 t_dlist	*ft_dlstnew(int val);
 void	ft_dlstadd_back(t_dlist **lst, t_dlist *new);
 void	ft_dlstadd_front(t_dlist **lst, t_dlist *new);
-
 void	ft_dlstiter(t_dlist *lst, void (*f)(t_dlist *));
-// int		ft_dlstiter_v(t_dlist *lst, int v);								// ft_sort.c: ft_sort_3
-void	ft_dlstiter_v_1(t_dlist *lst, int v, int *i);
-void	ft_dlstiter_2_max(t_dlist *lst, int v, int *tv);				// ft_push.c: ft_check_limits
-void	ft_dlstiter_high_low(t_dlist *lst, int v, int *tv, int *ti);	// ft_sort.c: ft_sort_big
-void	ft_dlstiter_low_high(t_dlist *lst, int v, int *tv, int *ti);	// ft_sort.c: ft_sort_big
-void	ft_dlstiter_3_min(t_dlist *lst, int v, int *tv);				// ft_push.c: ft_check_limits
-int		ft_dlstiter_v_4(t_dlist *lst, int v);							// ft_sort.c: ft_sort_4
+void	ft_dlstiter_v_last(t_dlist *lst, int v, int *i);
+int		ft_dlstiter_v_first(t_dlist *lst, int v);
+void	ft_dlstiter_max(t_dlist *lst, int v, int *tv);
+void	ft_dlstiter_min(t_dlist *lst, int v, int *tv);
+void	ft_dlstiter_high_low(t_dlist *lst, int v, int *tv, int *ti);
+void	ft_dlstiter_low_high(t_dlist *lst, int v, int *tv, int *ti);
 void	ft_dlstiter_cheap(t_dlist *lst, int *c, int pun[4]);
+
 t_dlist	*ft_dlstlast(t_dlist *lst);
 t_dlist	*ft_dlstat_i(t_dlist *lst, int i);
 void	ft_dlstdelone(t_dlist *lst);
@@ -111,6 +110,8 @@ int		ft_atoi_check(t_stack **stack, const char *nptr);
 void	ft_decr_idx(t_dlist *lst);
 void	ft_incr_index(t_dlist *lst);
 void	ft_check_limits(t_stack **s1, t_stack **s2);
+void	ft_write_rr(int ra_c, int rb_c, int rr_c);
+void	ft_write_rrr(int ra_c, int rb_c, int rr_c);
 
 /* ft_free */
 void	ft_free_stack(t_stack **stack);
@@ -164,12 +165,10 @@ void	ft_sb(t_map **map);
 
 /* utils.c */
 void	ft_del_cont(t_cont *cont);
-int	ft_get_num_count(char **in);
-void	ft_print_lst(t_dlist *lst);
+int		ft_get_num_count(char **in);
 int		ft_max(int a, int b);
 int		ft_min_tab(int *tab, int s);
 int		ft_isspace(int c);
 int		ft_just_space(char *str);
-void	ft_print_acts(t_dlist *lst);
 
 #endif

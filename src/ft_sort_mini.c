@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 16:56:46 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/21 12:29:22 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/21 21:06:16 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_sort_3(t_map **map)
 
 	stack = (*map)->stack_a;
 	max_i = 0;
-	ft_dlstiter_v_1((*map)->stack_a->lst, (*map)->stack_a->max, &max_i);
+	ft_dlstiter_v_last((*map)->stack_a->lst, (*map)->stack_a->max, &max_i);
 	if (max_i == 0)
 	{
 		ft_ra(map, 1);
@@ -72,7 +72,7 @@ static void	ft_sort_4_algo(t_map **map, int val_b)
 {
 	int	temp_i;
 
-	temp_i = ft_dlstiter_v_4((*map)->stack_a->lst, val_b);
+	temp_i = ft_dlstiter_v_first((*map)->stack_a->lst, val_b);
 	if (temp_i == 0)
 	{
 		ft_pa(map);

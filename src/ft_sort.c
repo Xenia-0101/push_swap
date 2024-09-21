@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 22:44:48 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/21 12:29:22 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/21 21:06:16 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_get_pos_b(t_stack *stack, int cv, int *pi, int *pv)
 	if (cv > stack->max || cv < stack->min)
 	{
 		*pv = stack->max;
-		ft_dlstiter_v_1(stack->lst, *pv, pi);
+		ft_dlstiter_v_last(stack->lst, *pv, pi);
 	}
 	else
 	{
@@ -117,7 +117,7 @@ void	ft_get_pos_a(t_stack *stack, int cv, int *pi, int *pv)
 	if (cv > stack->max || cv < stack->min)
 	{
 		*pv = stack->min;
-		ft_dlstiter_v_1(stack->lst, *pv, pi);
+		ft_dlstiter_v_last(stack->lst, *pv, pi);
 	}
 	else
 	{
@@ -215,7 +215,7 @@ void ft_sort_big(t_map **map)
 	ft_back_to_a(map, stack_a, (*map)->stack_b);
 
 	min_i = 0;
-	ft_dlstiter_v_1(stack_a->lst, stack_a->min, (int *)&min_i);
+	ft_dlstiter_v_last(stack_a->lst, stack_a->min, (int *)&min_i);
 	if (min_i < stack_a->size / 2)
 		ft_ra_x(map, min_i, 1);
 	else
