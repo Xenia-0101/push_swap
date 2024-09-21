@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 22:44:48 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/21 21:12:30 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/21 21:33:17 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,21 +44,6 @@ void ft_set_pun_b(t_map **map, t_stack *stack, t_dlist **temp, t_dlist **t2)
 			(*t2) = (*t2)->prev;
 		}
 	}
-	// else if ((*temp)->cost == (*temp)->index)
-	// {
-	// 	ft_pun_rotate(map, (*temp)->pun);
-	// 	ft_pb(map);
-	// 	*temp = stack->lst;
-	// 	*t2 = ft_dlstlast(stack->lst);
-	// }
-	// else if ((*t2)->cost == stack->size - 1)
-	// {
-	// 	printf("\n\nhere\n\n");
-	// 	ft_pun_rotate(map, (*t2)->pun);
-	// 	ft_pb(map);
-	// 	*temp = stack->lst;
-	// 	*t2 = ft_dlstlast(stack->lst);
-	// }
 	else
 	{
 		(*temp) = (*temp)->next;

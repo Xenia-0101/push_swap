@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 07:49:36 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/21 21:20:26 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/21 21:26:55 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 static void	ft_reset_pun(int pun[4]);
 int			ft_calc_conf(t_map **map, t_dlist **lst, int ia, int ib);
 void		ft_calc_pun(t_map **map, t_dlist **lst, int ia, int ib);
-void		ft_pun_rotate(t_map **map, int pun[4]);
 
 /**
  * @brief Reset values of pun to 0.

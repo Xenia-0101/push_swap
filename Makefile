@@ -22,7 +22,6 @@ SRC := \
 		${ACTS}ft_rotate.c \
 		${ACTS}ft_rrotate.c \
 		${ACTS}ft_pun_rotate.c \
-		${SRCS}utils.c \
 		${SRCS}ft_free.c \
 		${SRCS}ft_init.c \
 		${SRCS}ft_is_unique.c \
@@ -44,6 +43,8 @@ SRC := \
 		${UTLS}ft_atoi_check.c \
 		${UTLS}ft_manage_idx.c \
 		${UTLS}ft_write.c \
+		${UTLS}ft_utils_1.c \
+		${UTLS}ft_utils_2.c \
 
 OBJ = $(SRC:.c=.o)
 HEADER = -I ./include/
