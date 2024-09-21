@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 22:44:48 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/21 21:33:17 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/21 22:27:53 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -218,6 +218,8 @@ void ft_sort(t_map **map)
 		ft_sort_big(map);
 	else
 		ft_sort_big(map);
+	printf("\n%d %d\n", (*map)->stack_a->lst->value, (*map)->stack_a->lst->next->value);
+	printf("\n%d %d\n", (*map)->stack_a->lst->next->value, (*map)->stack_a->lst->next->next->value);
 	ft_free_map(map);
 	exit(0);
 }

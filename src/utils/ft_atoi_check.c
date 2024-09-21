@@ -12,55 +12,51 @@
 
 #include "push_swap.h"
 
+static void	ft_exit_ps(t_stack **stack)
+{
+		write(2, "Error\n", 6);
+		ft_free_stack(stack);
+		exit(1);
+}
+
+static int	ft_set_sign(char c, int *sign)
+{
+	if (c && (c == '+' || c == '-'))
+	{
+		if (c == '-')
+			*sign = -1;
+		return (1);
+	}
+	return (0);
+}
+
 /**
  * if there are chars after number is parsed, atoi exits program.
  */
 int	ft_atoi_check(t_stack **stack, const char *nptr)
 {
-	// printf("%d %d %d\n", -2147483648, 2147483648, 2147483647 );
-	int	res;
-	int	sign;
-	int	i;
-	if (!nptr || !*nptr)
-	{
-		write(2, "Error\n", 6);
-		ft_free_stack(stack);
-		exit(1);
-	}
-	if (!ft_strncmp(nptr, "-2147483648", 11))
-	{
-		return (-2147483648);
-	}
+	long	res;
+	int		sign;
+	int		i;
 
+	if (!nptr || !*nptr)
+		ft_exit_ps(stack);
 	res = 0;
 	sign = 1;
 	i = 0;
 	while (nptr[i] && ft_isspace(nptr[i]))
-	{
 		i++;
-	}
-	if (nptr[i] && (nptr[i] == '+' || nptr[i] == '-'))
-	{
-		if (nptr[i] == '-')
-			sign = -1;
-		i++;
-	}
+	i += ft_set_sign(nptr[i], &sign);
 	if (!nptr[i] || !ft_isdigit(nptr[i]))
-	{
-		write(2, "Error\n", 6);
-		ft_free_stack(stack);
-		exit(1);
-	}
+		ft_exit_ps(stack);
 	while (nptr[i] && ft_isdigit(nptr[i]))
 	{
 		res = 10 * res + (nptr[i] - '0');
 		i++;
 	}
 	if (nptr[i])
-	{
-		write(2, "Error\n", 6);
-		ft_free_stack(stack);
-		exit(1);
-	}
-	return (res * sign);
+		ft_exit_ps(stack);
+	if (res * sign > 2147483647 || res * sign < -2147483648)
+		ft_exit_ps(stack);
+	return ((int)(res * sign));
 }
