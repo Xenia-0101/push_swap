@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_sorted.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 23:35:27 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/09 14:58:24 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/21 12:20:37 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ int	ft_is_sorted(t_map *map)
 	int		is_asc;
 	int		is_des;
 	t_dlist	*curr;
-	t_dlist	*next;
 
 	if (ft_check_size(map))
 		return (map->state);

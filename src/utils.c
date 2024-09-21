@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 13:25:57 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/10 12:58:02 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/21 12:00:52 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,7 @@ int ft_just_space(char *str)
 	}
 	return (res);
 }
-void ft_print_acts(t_dlist *lst)
-{
-	printf("cost: %d\tconf:%d\npun: ", lst->cost, lst->conf);
-	printf("%d %d %d %d\n", lst->pun[0], lst->pun[1], lst->pun[2], lst->pun[3]);
-	printf("\n");
-}
-void ft_print_lst(t_dlist *lst)
-{
-	// printf("***%d***\n", cont->value);
-	printf("%ld\t%d\n", lst->index, lst->value);
-}
+
 void ft_del_cont(t_cont *cont)
 {
 	cont->value = 0;

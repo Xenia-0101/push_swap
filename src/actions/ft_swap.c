@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 19:02:30 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/10 20:28:51 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/21 12:20:15 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 /* sa (swap a): Swap the first 2 elements at the top of stack a.
 Do nothing if there is only one or no elements. */
-
 void	ft_sa(t_map **map)
 {
 	int		val;
-	t_act	**act;
 	t_dlist	*temp;
 
 	if (!(*map)->stack_a->lst)
@@ -35,7 +33,6 @@ void	ft_sa(t_map **map)
 void	ft_sb(t_map **map)
 {
 	int		val;
-	t_act	**act;
 	t_dlist	*temp;
 
 	if (!(*map)->stack_b->lst)
@@ -48,4 +45,3 @@ void	ft_sb(t_map **map)
 	temp->value = val;
 	write(1, "sb\n", 3);
 }
-

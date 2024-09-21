@@ -15,7 +15,7 @@
 t_dlist	*ft_dlstnew(int val)
 {
 	t_dlist	*lst;
-	int i;
+	int		i;
 
 	lst = (t_dlist *)ft_calloc(1, sizeof (t_dlist));
 	if (!lst)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:15:36 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/10 19:42:33 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/21 12:01:00 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int main(int argc, char **argv)
 	}
 	ft_init_map(&map, stack_a);
 	ft_is_sorted(map);
-	// printf("Map state: %d\n", map->state);
 	if (!map->state)
 		ft_sort(&map);
 	if (map->state == 2)

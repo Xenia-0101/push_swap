@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_dlstiter.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 10:07:00 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/10 18:03:33 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/21 12:26:45 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,7 +185,7 @@ size_t	ft_dlstiter_v_4(t_dlist *lst, int v)
  * @param i
  * @return void*
  */
-void ft_dlstiter_cheap(t_dlist *lst, int *c, int pun[4])
+void ft_dlstiter_cheap(t_dlist *lst, size_t *c, int pun[4])
 {
 	// printf("\n%d %d\n", lst->cost, lst->index);
 	if (!lst)

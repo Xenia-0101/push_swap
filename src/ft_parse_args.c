@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parse_args.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 14:45:40 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/09 17:30:37 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/21 12:21:17 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	ft_init_limits(t_stack **stack, int v)
 static void	ft_parse_long(t_stack **st, char *arg)
 {
 	t_dlist	*new;
-	int		i;
+	size_t	i;
 
 	if (!arg || !*arg || ft_just_space(arg))
 	{

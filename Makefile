@@ -1,6 +1,6 @@
 NAME = push_swap
-CFLAGS =  -g
-# CFLAGS = -Wall -Wextra -Werror -g
+# CFLAGS =  -g
+CFLAGS = -Wall -Wextra -Werror -g
 
 RM = rm -rf
 CC = cc
@@ -40,6 +40,7 @@ SRC := \
 		${LSTS}ft_dlstnew.c \
 		${LSTS}ft_dlstsize.c \
 		${UTLS}ft_atoi_check.c \
+		${UTLS}ft_manage_idx.c \
 		# ${LSTS}ft_actadd_back.c \
 		# ${LSTS}ft_actadd_front.c \
 		# ${LSTS}ft_actclear.c \

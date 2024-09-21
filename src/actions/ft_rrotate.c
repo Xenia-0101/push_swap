@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rrotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:12:24 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/10 20:32:01 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/21 12:18:10 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
 /**
  * @brief 	Rotates the list variable lst is pointing to, s
  * 			o that the last node becomes the first node.
@@ -21,7 +22,6 @@
  *
  * @param lst A pointer to the pointer of the list to be rotated.
  */
-
 void	ft_rrb(t_map **map, int p)
 {
 	t_dlist	*new;
@@ -38,8 +38,8 @@ void	ft_rrb(t_map **map, int p)
 
 void	ft_rra(t_map **map, int p)
 {
-	t_dlist *new;
-	t_dlist *last;
+	t_dlist	*new;
+	t_dlist	*last;
 
 	last = ft_dlstlast((*map)->stack_a->lst);
 	new = ft_dlstnew((last)->value);

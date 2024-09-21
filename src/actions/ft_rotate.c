@@ -3,24 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 11:42:27 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/10 20:32:24 by xvislock         ###   ########.fr       */
+/*   Updated: 2024/09/21 12:17:56 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void ft_decr_idx(t_dlist *lst)
-{
-	lst->index--;
-}
 /**
  * @brief	Rotates the list variable lst is pointing to,
  * 			so that the fires element becomes the last one.
  *
- * 	Create a new node ("first") with cont.value the same as the lst first node cont.value.
+ * 	Create a new node ("first") with cont.value the same as
+ * 	the lst first node cont.value.
  * 	Shift lst pointer to the next node and delete the first node.
  * 	Add "first" to the back of the lst.
  *
@@ -28,8 +25,8 @@ void ft_decr_idx(t_dlist *lst)
  */
 void	ft_rb(t_map **map, int p)
 {
-	t_dlist *new;
-	t_dlist *first;
+	t_dlist	*new;
+	t_dlist	*first;
 
 	if (!(*map)->stack_b->lst)
 		return ;
@@ -50,8 +47,8 @@ void	ft_rb(t_map **map, int p)
 
 void	ft_ra(t_map **map, int p)
 {
-	t_dlist *new;
-	t_dlist *first;
+	t_dlist	*new;
+	t_dlist	*first;
 
 	if (!(*map)->stack_a->lst)
 		return ;
