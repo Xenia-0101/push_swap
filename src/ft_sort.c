@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 22:44:48 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/21 21:06:16 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/21 21:12:30 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void ft_set_pun_b(t_map **map, t_stack *stack, t_dlist **temp, t_dlist **t2)
 	{
 		if ((*temp)->cost == 0)
 		{
-			ft_do_act_big(map, (*temp)->pun);
+			ft_pun_rotate(map, (*temp)->pun);
 			ft_pb(map);
 			*temp = stack->lst;
 			*t2 = ft_dlstlast(stack->lst);
@@ -46,7 +46,7 @@ void ft_set_pun_b(t_map **map, t_stack *stack, t_dlist **temp, t_dlist **t2)
 	}
 	// else if ((*temp)->cost == (*temp)->index)
 	// {
-	// 	ft_do_act_big(map, (*temp)->pun);
+	// 	ft_pun_rotate(map, (*temp)->pun);
 	// 	ft_pb(map);
 	// 	*temp = stack->lst;
 	// 	*t2 = ft_dlstlast(stack->lst);
@@ -54,7 +54,7 @@ void ft_set_pun_b(t_map **map, t_stack *stack, t_dlist **temp, t_dlist **t2)
 	// else if ((*t2)->cost == stack->size - 1)
 	// {
 	// 	printf("\n\nhere\n\n");
-	// 	ft_do_act_big(map, (*t2)->pun);
+	// 	ft_pun_rotate(map, (*t2)->pun);
 	// 	ft_pb(map);
 	// 	*temp = stack->lst;
 	// 	*t2 = ft_dlstlast(stack->lst);
@@ -85,14 +85,14 @@ void ft_first_to_b(t_map **map, t_stack *stack_a, t_stack *stack_b)
 			curr_v = temp->value;
 			ft_get_pos_b(stack_b, curr_v, &push_i, &push_v);
 			temp->ipo = push_i;
-			ft_calc_act_big(map, &temp, temp->index, push_i);
-			ft_calc_pun_big(map, &temp, temp->index, push_i);
+			ft_calc_conf(map, &temp, temp->index, push_i);
+			ft_calc_pun(map, &temp, temp->index, push_i);
 
 			cv2 = t2->value;
 			ft_get_pos_b(stack_b, cv2, &push_i, &push_v);
 			t2->ipo = push_i;
-			ft_calc_act_big(map, &t2, t2->index, push_i);
-			ft_calc_pun_big(map, &t2, t2->index, push_i);
+			ft_calc_conf(map, &t2, t2->index, push_i);
+			ft_calc_pun(map, &t2, t2->index, push_i);
 
 			ft_set_pun_b(map, stack_a, &temp, &t2);
 		}
@@ -104,7 +104,7 @@ void ft_first_to_b(t_map **map, t_stack *stack_a, t_stack *stack_b)
 			stack_a->ih[2] = stack_a->lst->pun[2];
 			stack_a->ih[3] = stack_a->lst->pun[3];
 			ft_dlstiter_cheap(stack_a->lst, &curr_v, stack_a->ih);
-			ft_do_act_big(map, stack_a->ih);
+			ft_pun_rotate(map, stack_a->ih);
 			ft_pb(map);
 		}
 		temp = stack_a->lst;
@@ -130,21 +130,21 @@ void ft_set_pun_a(t_map **map, t_stack *stack, t_dlist **temp, t_dlist **t2)
 {
 	if ((*temp)->index == 0 && (*temp)->cost == 0)
 	{
-		ft_do_act_big(map, (*temp)->pun);
+		ft_pun_rotate(map, (*temp)->pun);
 		ft_pa(map);
 		(*temp) = stack->lst;
 		(*t2) = ft_dlstlast(stack->lst);
 	}
 	else if ((*temp)->cost == (*temp)->index)
 	{
-		ft_do_act_big(map, (*temp)->pun);
+		ft_pun_rotate(map, (*temp)->pun);
 		ft_pa(map);
 		(*temp) = stack->lst;
 		(*t2) = ft_dlstlast(stack->lst);
 	}
 	else if ((*t2)->cost == stack->size - 1)
 	{
-		ft_do_act_big(map, (*t2)->pun);
+		ft_pun_rotate(map, (*t2)->pun);
 		ft_pa(map);
 		(*temp) = stack->lst;
 		(*t2) = ft_dlstlast(stack->lst);
@@ -175,14 +175,14 @@ void ft_back_to_a(t_map **map, t_stack *stack_a, t_stack *stack_b)
 			curr_v = temp->value;
 			ft_get_pos_a(stack_a, curr_v, &push_i, &push_v);
 			temp->ipo = push_i;
-			ft_calc_act_big(map, &temp, push_i, temp->index);
-			ft_calc_pun_big(map, &temp, push_i, temp->index);
+			ft_calc_conf(map, &temp, push_i, temp->index);
+			ft_calc_pun(map, &temp, push_i, temp->index);
 
 			cv2 = t2->value;
 			ft_get_pos_a(stack_a, cv2, &push_i, &push_v);
 			t2->ipo = push_i;
-			ft_calc_act_big(map, &t2, push_i, t2->index);
-			ft_calc_pun_big(map, &t2, push_i, t2->index);
+			ft_calc_conf(map, &t2, push_i, t2->index);
+			ft_calc_pun(map, &t2, push_i, t2->index);
 
 			ft_set_pun_a(map, stack_b, &temp, &t2);
 		}
@@ -194,7 +194,7 @@ void ft_back_to_a(t_map **map, t_stack *stack_a, t_stack *stack_b)
 			stack_b->ih[2] = stack_b->lst->pun[2];
 			stack_b->ih[3] = stack_b->lst->pun[3];
 			ft_dlstiter_cheap(stack_b->lst, &curr_v, stack_b->ih);
-			ft_do_act_big(map, stack_b->ih);
+			ft_pun_rotate(map, stack_b->ih);
 			ft_pa(map);
 		}
 		temp = stack_b->lst;

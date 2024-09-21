@@ -6,15 +6,29 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 07:49:36 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/21 20:59:10 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/21 21:20:26 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		ft_calc_act_big(t_map **map, t_dlist **lst, int ia, int ib);
-void	ft_calc_pun_big(t_map **map, t_dlist **lst, int ia, int ib);
-void	ft_do_act_big(t_map **map, int pun[4]);
+static void	ft_reset_pun(int pun[4]);
+int			ft_calc_conf(t_map **map, t_dlist **lst, int ia, int ib);
+void		ft_calc_pun(t_map **map, t_dlist **lst, int ia, int ib);
+void		ft_pun_rotate(t_map **map, int pun[4]);
+
+/**
+ * @brief Reset values of pun to 0.
+ *
+ * @param pun int[4] array
+ */
+static void ft_reset_pun(int pun[4])
+{
+	pun[0] = 0;
+	pun[1] = 0;
+	pun[2] = 0;
+	pun[3] = 0;
+}
 
 /**
  * @brief	Calculate the cost of each action configuration to get
@@ -35,7 +49,7 @@ void	ft_do_act_big(t_map **map, int pun[4]);
  * @param ib	Index of the node in stack b
  * @return int	Reference to the configuration (0 - 3)
  */
-int	ft_calc_act_big(t_map **map, t_dlist **lst, int ia, int ib)
+int	ft_calc_conf(t_map **map, t_dlist **lst, int ia, int ib)
 {
 	int	res[4];
 	int	sa;
@@ -67,98 +81,27 @@ int	ft_calc_act_big(t_map **map, t_dlist **lst, int ia, int ib)
  * @param ia	Index of the node in stack a
  * @param ib	Index of the node in stack b
  */
-void	ft_calc_pun_big(t_map **map, t_dlist **lst, int ia, int ib)
+void	ft_calc_pun(t_map **map, t_dlist **lst, int ia, int ib)
 {
+	ft_reset_pun((*lst)->pun);
 	if ((*lst)->conf == 0)
 	{
 		(*lst)->pun[0] = ia;
-		(*lst)->pun[1] = 0;
 		(*lst)->pun[2] = ib;
-		(*lst)->pun[3] = 0;
 	}
 	else if ((*lst)->conf == 1)
 	{
 		(*lst)->pun[0] = ia;
-		(*lst)->pun[1] = 0;
-		(*lst)->pun[2] = 0;
 		(*lst)->pun[3] = (*map)->stack_b->size - ib;
 	}
 	else if ((*lst)->conf == 2)
 	{
-		(*lst)->pun[0] = 0;
 		(*lst)->pun[1] = (*map)->stack_a->size - ia;
 		(*lst)->pun[2] = ib;
-		(*lst)->pun[3] = 0;
 	}
 	else if ((*lst)->conf == 3)
 	{
-		(*lst)->pun[0] = 0;
 		(*lst)->pun[1] = (*map)->stack_a->size - ia;
-		(*lst)->pun[2] = 0;
 		(*lst)->pun[3] = (*map)->stack_b->size - ib;
-	}
-}
-
-/**
- * @brief Perform rotations based on pun values
- *
- * @param map
- * @param pun lst.pun
- */
-void	ft_do_act_big(t_map **map, int pun[4])
-{
-	int temp_p[4];
-	int ra_c;
-	int rb_c;
-	int rr_c;
-
-	temp_p[0] = pun[0];
-	temp_p[1] = pun[1];
-	temp_p[2] = pun[2];
-	temp_p[3] = pun[3];
-
-	if (temp_p[0] && temp_p[2])	// if ra and rb
-	{
-		ft_ra_x(map, temp_p[0], 0);
-		ft_rb_x(map, temp_p[2], 0);
-		if (temp_p[0] > temp_p[2])
-		{
-			ra_c = temp_p[0] - temp_p[2];
-			rb_c = 0;
-			rr_c = temp_p[2];
-		}
-		else
-		{
-			ra_c = 0;
-			rb_c = temp_p[2] - temp_p[0];
-			rr_c = temp_p[0];
-		}
-		ft_write_rr(ra_c, rb_c, rr_c);
-
-	}
-	else if (temp_p[1] && temp_p[3]) // if rra and rrb
-	{
-		ft_rra_x(map, temp_p[1], 0);
-		ft_rrb_x(map, temp_p[3], 0);
-		if (temp_p[1] > temp_p[3])
-		{
-			ra_c = temp_p[1] - temp_p[3];
-			rb_c = 0;
-			rr_c = temp_p[3];
-		}
-		else
-		{
-			ra_c = 0;
-			rb_c = temp_p[3] - temp_p[1];
-			rr_c = temp_p[1];
-		}
-		ft_write_rrr(ra_c, rb_c, rr_c);
-	}
-	else
-	{
-		ft_ra_x(map, temp_p[0], 1);
-		ft_rra_x(map, temp_p[1], 1);
-		ft_rb_x(map, temp_p[2], 1);
-		ft_rrb_x(map, temp_p[3], 1);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:16:23 by xvislock          #+#    #+#             */
-/*   Updated: 2024/09/21 21:08:30 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/21 21:13:25 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,9 +145,9 @@ void	ft_sort_4(t_map **map);
 // void	ft_sort_5(t_map **map);
 
 /* pun */
-int		ft_calc_act_big(t_map **map, t_dlist **lst, int ia, int ib);
-void	ft_calc_pun_big(t_map **map, t_dlist **lst, int ia, int ib);
-void	ft_do_act_big(t_map **map, int pun[4]);
+int		ft_calc_conf(t_map **map, t_dlist **lst, int ia, int ib);
+void	ft_calc_pun(t_map **map, t_dlist **lst, int ia, int ib);
+void	ft_pun_rotate(t_map **map, int pun[4]);
 
 /* actions */
 void	ft_pa(t_map **map);
@@ -162,6 +162,7 @@ void	ft_rra_x(t_map **map, int i, int p);
 void	ft_rrb_x(t_map **map, int i, int p);
 void	ft_sa(t_map **map);
 void	ft_sb(t_map **map);
+void	ft_pun_rotate(t_map **map, int pun[4]);
 
 /* utils.c */
 void	ft_del_cont(t_cont *cont);

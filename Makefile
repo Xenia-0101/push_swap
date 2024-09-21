@@ -21,6 +21,7 @@ SRC := \
 		${ACTS}ft_swap.c \
 		${ACTS}ft_rotate.c \
 		${ACTS}ft_rrotate.c \
+		${ACTS}ft_pun_rotate.c \
 		${SRCS}utils.c \
 		${SRCS}ft_free.c \
 		${SRCS}ft_init.c \
