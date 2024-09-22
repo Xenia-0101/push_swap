@@ -14,9 +14,9 @@
 
 static void	ft_exit_ps(t_stack **stack)
 {
-		write(2, "Error\n", 6);
-		ft_free_stack(stack);
-		exit(1);
+	write(2, "Error\n", 6);
+	ft_free_stack(stack);
+	exit(1);
 }
 
 static int	ft_set_sign(char c, int *sign)

@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 14:48:51 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/21 21:58:10 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/22 08:32:47 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ void	ft_free_stack(t_stack **stack)
 }
 
 /**
- * @brief 	If stack a or stack b exist, free them using ft_free_stack function
+ * @brief 	If stack a or stack b exist, free them
+ * 				using ft_free_stack function
  *			Set all params to 0
 			Free map
  *

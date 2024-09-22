@@ -1,5 +1,6 @@
 NAME = push_swap
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -g
+# CFLAGS = -Wall -Wextra -Werror -g
 
 RM = rm -rf
 CC = cc
@@ -29,6 +30,8 @@ SRC := \
 		${SRCS}ft_parse_args.c \
 		${SRCS}ft_sort_reverse.c \
 		${SRCS}ft_sort.c \
+		${SRCS}ft_sort_big_1.c \
+		${SRCS}ft_sort_big_2.c \
 		${SRCS}ft_sort_mini.c \
 		${SRCS}ft_pun.c \
 		${LSTS}ft_dlstadd_back.c \
