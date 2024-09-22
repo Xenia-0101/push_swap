@@ -6,11 +6,16 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 07:47:12 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/22 08:35:36 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/22 13:22:59 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	ft_get_pos_a(t_stack *stack, int cv, int *pi, int *pv);
+static void	ft_set_pun_a(t_map **map, t_stack *st, t_dlist **t1, t_dlist **t2);
+static void	ft_calc_algo(t_map **map, t_dlist **t1, t_dlist **t2);
+void		ft_sort_big_2(t_map **map, t_stack *stack_b);
 
 static void	ft_get_pos_a(t_stack *stack, int cv, int *pi, int *pv)
 {
@@ -74,7 +79,7 @@ static void	ft_calc_algo(t_map **map, t_dlist **t1, t_dlist **t2)
 	}
 }
 
-void	ft_sort_big_2(t_map **map, t_stack *stack_a, t_stack *stack_b)
+void	ft_sort_big_2(t_map **map, t_stack *stack_b)
 {
 	t_dlist	*t1;
 	t_dlist	*t2;

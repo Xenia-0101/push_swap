@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 15:47:04 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/21 21:58:36 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/22 13:29:33 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,16 @@ void	ft_init_stack_b(t_map **map);
  * @brief Allocate memory for stack a
  * 			Set parameters to 0 or NULL
  *
- * 			TODO: 	Change to return NULL on failed allocation OR check after calling the function
- *
  * @param stack
  */
 void	ft_init_stack_a(t_stack **stack)
 {
 	*stack = (t_stack *)ft_calloc(1, sizeof (t_stack));
 	if (!*stack)
-		return ;
+	{
+		write(2, "Error\n", 6);
+		exit (1);
+	}
 	(*stack)->lst = NULL;
 	(*stack)->ph = NULL;
 	(*stack)->ih[0] = 0;
@@ -46,8 +47,6 @@ void	ft_init_stack_a(t_stack **stack)
  * 			Set initial min and max values to the stack a first value
  * 			Set the rest of the params to 0
  *
- * 			TODO: 	Change to return NULL on failed allocation OR check after calling the function
- *
  * @param map
  */
 void	ft_init_stack_b(t_map **map)
@@ -57,7 +56,11 @@ void	ft_init_stack_b(t_map **map)
 	stack = &(*map)->stack_b;
 	*stack = (t_stack *)ft_calloc(1, sizeof (t_stack));
 	if (!*stack)
-		return ;
+	{
+		write(2, "Error\n", 6);
+		ft_free_map(map);
+		exit(1);
+	}
 	(*stack)->lst = NULL;
 	(*stack)->ph = NULL;
 	(*stack)->ih[0] = 0;
@@ -76,8 +79,6 @@ void	ft_init_stack_b(t_map **map)
  * 			Set min, max and size to correspond to the stack a
  * 			Set else to 0
  *
- * 			TODO: 	Change to return NULL on failed allocation OR check after calling the function
- *
  * @param map
  * @param stack_a
  */
@@ -85,7 +86,11 @@ void	ft_init_map(t_map **map, t_stack *stack_a)
 {
 	*map = (t_map *)ft_calloc(1, sizeof (t_map));
 	if (!*map)
-		return ;
+	{
+		write(2, "Error\n", 6);
+		ft_free_stack(&stack_a);
+		exit(1);
+	}
 	(*map)->stack_a = stack_a;
 	(*map)->stack_b = NULL;
 	(*map)->acts = NULL;

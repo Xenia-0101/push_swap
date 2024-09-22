@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 16:56:46 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/21 21:55:55 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/22 17:21:06 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,4 +123,15 @@ void	ft_sort_4(t_map **map)
 	{
 		ft_sort_4_algo(map, val_b);
 	}
+}
+
+void	ft_sort_5_rev(t_map **map)
+{
+	ft_pb(map);
+	ft_pb(map);
+	ft_sort_3(map);
+	ft_pa(map);
+	ft_ra(map, 1);
+	ft_pa(map);
+	ft_ra(map, 1);
 }

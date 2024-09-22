@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 14:45:40 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/21 22:00:23 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/22 17:24:55 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,6 @@ void	ft_parse_args(t_stack **stack, int argc, char **argv)
 {
 	if (argc == 1)
 	{
-		write(2, "Error\n", 6);
 		ft_free_stack(stack);
 		exit(1);
 	}

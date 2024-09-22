@@ -6,11 +6,16 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 06:36:18 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/22 08:36:24 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/22 13:21:34 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	ft_get_pos_b(t_stack *stack, int cv, int *pi, int *pv);
+static void	ft_set_pun_b(t_map **map, t_stack *st, t_dlist **t1, t_dlist **t2);
+static void	ft_calc_algo(t_map **map, t_dlist **t1, t_dlist **t2);
+void		ft_sort_big_1(t_map **map, t_stack *stack_a);
 
 static void	ft_get_pos_b(t_stack *stack, int cv, int *pi, int *pv)
 {
@@ -75,14 +80,13 @@ static void	ft_calc_algo(t_map **map, t_dlist **t1, t_dlist **t2)
 	}
 }
 
-void	ft_sort_big_1(t_map **map, t_stack *stack_a, t_stack *stack_b)
+void	ft_sort_big_1(t_map **map, t_stack *stack_a)
 {
 	t_dlist	*temp;
 	t_dlist	*t2;
 	int		curr_v;
 
 	stack_a = (*map)->stack_a;
-	stack_b = (*map)->stack_b;
 	temp = stack_a->lst;
 	t2 = ft_dlstlast(stack_a->lst);
 	while (stack_a->size > 3)

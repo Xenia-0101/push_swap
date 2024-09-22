@@ -6,11 +6,14 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 22:44:48 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/22 08:36:41 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/22 16:51:35 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	ft_sort_big(t_map **map);
+void		ft_sort(t_map **map);
 
 static void	ft_sort_big(t_map **map)
 {
@@ -20,9 +23,9 @@ static void	ft_sort_big(t_map **map)
 	stack_a = (*map)->stack_a;
 	ft_pb(map);
 	ft_pb(map);
-	ft_sort_big_1(map, stack_a, (*map)->stack_b);
+	ft_sort_big_1(map, stack_a);
 	ft_sort_3(map);
-	ft_sort_big_2(map, stack_a, (*map)->stack_b);
+	ft_sort_big_2(map, (*map)->stack_b);
 	min_i = 0;
 	ft_dlstiter_v_last(stack_a->lst, stack_a->min, (int *)&min_i);
 	if (min_i < stack_a->size / 2)

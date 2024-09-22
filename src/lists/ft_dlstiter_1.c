@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 10:07:00 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/21 16:30:07 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/22 17:02:23 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,8 @@ void	ft_dlstiter_min(t_dlist *lst, int v, int *tv)
 }
 
 /**
- * @brief	Iterate list and return the index of the node with value v.
+ * @brief	Iterate list and return the index of the node
+ * 				with value larger than v.
  * 			Return -1 if no such node exists.
  *
  * @param lst	List to iterate
@@ -103,11 +104,10 @@ int	ft_dlstiter_v_first(t_dlist *lst, int v)
 {
 	if (!lst)
 		return (-1);
-	if (lst->value > v)
+	else if (lst->value > v)
 	{
 		return (lst->index);
 	}
-	if (lst->next)
+	else if (lst->next)
 		ft_dlstiter_v_first(lst->next, v);
-	return (-1);
 }

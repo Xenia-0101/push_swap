@@ -6,7 +6,7 @@
 /*   By: xenia <xenia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 21:16:55 by xenia             #+#    #+#             */
-/*   Updated: 2024/09/21 21:57:54 by xenia            ###   ########.fr       */
+/*   Updated: 2024/09/22 14:18:18 by xenia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,7 @@ int	ft_is_unique(t_stack **stack)
 		exit(1);
 	}
 	res = ft_check_unique(stack, tab);
-	if ((*stack)->size % 2)
+	if (res && (*stack)->size % 2)
 		res = ft_check_odd(stack, tab);
 	free(tab);
 	return (res);

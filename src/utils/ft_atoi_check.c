@@ -12,6 +12,10 @@
 
 #include "push_swap.h"
 
+static void	ft_exit_ps(t_stack **stack);
+static int	ft_set_sign(char c, int *sign);
+int			ft_atoi_check(t_stack **stack, const char *nptr);
+
 static void	ft_exit_ps(t_stack **stack)
 {
 	write(2, "Error\n", 6);
