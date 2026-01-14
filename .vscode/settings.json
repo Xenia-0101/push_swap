@@ -3,5 +3,6 @@
 		"random": "c",
 		"push_swap.h": "c",
 		"storage": "c"
-	}
+	},
+	"makefile.configureOnOpen": false
 }
