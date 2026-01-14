@@ -13,7 +13,8 @@
 NAME		= push_swap
 
 CC			= cc
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS		= -g
+# CFLAGS		= -Wall -Wextra -Werror
 INCLUDES	= -Iinclude
 
 SRC_DIR		= src
@@ -21,6 +22,8 @@ OBJ_DIR		= obj
 
 SRCS		= push_swap.c \
 			  stack.c \
+			  operations.c \
+			  map.c \
 
 SRC_FILES	= $(addprefix $(SRC_DIR)/, $(SRCS))
 OBJ_FILES	= $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))

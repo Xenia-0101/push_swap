@@ -1,6 +1,6 @@
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
 
+
+header = """
 typedef struct s_node
 {
 	int				value;
@@ -21,6 +21,5 @@ void	stack_add_back(t_node **stack, t_node *new);
 int		stack_size(t_node *stack);
 
 void	sa(t_map *map);
-void sb(t_map *map);
-
-#endif
+void 	sb(t_map *map);
+"""

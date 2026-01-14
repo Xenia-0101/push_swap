@@ -1,18 +1,16 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "push_swap.h"
 
-int	main(void)
+// initialize map
+
+
+int	main(int argc, char **argv)
 {
-	t_node	*stack = NULL;
+	t_node	a;
 
-	stack = stack_new(10);
+	// initialize map
+	// sort stack
+	// free space
 
-	printf("stack\n");
-	printf("%d", stack->value);
-
-	stack_add_back(&stack, 5);
-	printf("%d", stack->next->value);
-	
 	return (0);
 }
