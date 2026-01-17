@@ -24,6 +24,7 @@ SRCS		= push_swap.c \
 			  stack.c \
 			  operations.c \
 			  map.c \
+			  parse.c \
 
 SRC_FILES	= $(addprefix $(SRC_DIR)/, $(SRCS))
 OBJ_FILES	= $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
@@ -67,7 +68,7 @@ lib: $(OBJ_FILES)
 	$(CC) -shared -fPIC $(OBJ_FILES) -o libpushswap.so
 
 test: lib
-	pytest
+	pytest -v
 
 # -----------------------------------------------------------------------------#
 # Phony

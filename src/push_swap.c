@@ -6,9 +6,10 @@
 
 int	main(int argc, char **argv)
 {
-	t_node	a;
+	t_map	*map;
 
-	// initialize map
+	// parse arguments
+	parse_input(map, argc, argv);
 	// sort stack
 	// free space
 

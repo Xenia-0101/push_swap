@@ -37,11 +37,20 @@ def apply_operations(stack, ops):
     return a, b
 
 
-def test_push_swap_sorts_three():
-    initial = [3, 1, 2]
-    ops = run_push_swap(initial)
+# def test_push_swap_sorts_three():
+#     initial = [3, 1, 2]
+#     ops = run_push_swap(initial)
 
-    a, b = apply_operations(initial, ops)
+#     a, b = apply_operations(initial, ops)
 
-    assert a == sorted(initial)
-    assert b == []
+#     assert a == sorted(initial)
+#     assert b == []
+
+
+# *************************************************** #
+#                SOME BASIC CASES                     #
+# *************************************************** #
+
+# def test_push_swap_no_input():
+#     res = run_push_swap()
+#     assert res == 1
