@@ -5,8 +5,6 @@ t_map	*map_new(t_node *node_a)
 {
 	t_map	*map;
 
-	if (!node_a)
-		return(NULL);
 	map = malloc(sizeof(t_map));
 	if (!map)
 		return (NULL);

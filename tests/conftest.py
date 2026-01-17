@@ -16,6 +16,10 @@ def lib(ffi):
 def empty_stack(ffi):
     return ffi.new("t_node **")
 
+@pytest.fixture
+def single_node(lib):
+    return lib.stack_new(5)
+
 # ---------------------------------------------------------- #
 #                           Factories                        #
 # ---------------------------------------------------------- #
